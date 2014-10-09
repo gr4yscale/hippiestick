@@ -23,7 +23,7 @@
 #
 
 #
-APP_LIBS_LIST = 0
+APP_LIBS_LIST = SPI
 
 # List user's libraries here 
 # default = 0 = none
@@ -31,7 +31,7 @@ APP_LIBS_LIST = 0
 # USER = Adafruit_nRF8001 CmdMessenger FastLED LPD8806 
 #
 
-USER_LIBS_LIST = 0
+USER_LIBS_LIST = Adafruit_nRF8001 CmdMessenger LPD8806
 
 # List core, application and user's libraries to be excluded
 # For example, WiFi may crash on Arduino 1.0.2, Esplora on Arduino 1.0.3, Firmata on Teensy 3.0,

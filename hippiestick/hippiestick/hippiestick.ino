@@ -4,20 +4,23 @@
 // BLE-controlled LPD8806
 
 #include "Arduino.h"
-#include "SPI.h"
-
-// Include application, user and local libraries
 #include "LocalLibrary.h"
-
-
-// Define variables and constants
+#include "config_constants.h"
+#include "Adafruit_BLE_UART.h"
+#include "LPD8806.h"
+#include "CmdMessenger.h"
 
 uint8_t myLED;
-
 
 void setup() {
     myLED = 13;
     pinMode(myLED, OUTPUT);
+
+    Adafruit_BLE_UART BTLEserial = Adafruit_BLE_UART(ADAFRUITBLE_REQ, ADAFRUITBLE_RDY, ADAFRUITBLE_RST);
+
+    LPD8806 strip = LPD8806(208);
+
+    CmdMessenger cmdMessenger = CmdMessenger(BTLEserial, ',', ';');
 }
 
 void loop() {
