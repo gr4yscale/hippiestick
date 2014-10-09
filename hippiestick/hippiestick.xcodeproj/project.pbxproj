@@ -1,0 +1,1354 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		29D201A919E67F1300649898 /* LocalLibrary.h in Sources */ = {isa = PBXBuildFile; fileRef = 29D701A919E67F1300649898 /* LocalLibrary.h */; };
+		29D201F919E67F1300649898 /* hippiestick.ino in Sources */ = {isa = PBXBuildFile; fileRef = 29D701F919E67F1300649898 /* hippiestick.ino */; };
+		29D701A619E67F1300649898 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29D701A519E67F1300649898 /* main.cpp */; };
+		29D701A819E67F1300649898 /* LocalLibrary.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29D701A719E67F1300649898 /* LocalLibrary.cpp */; };
+		AAA2141009013031AA000007 /* Adafruit_BLE_UART.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAAA141009013031AA000007 /* Adafruit_BLE_UART.cpp */; };
+		AAA2141009013031AA000008 /* Adafruit_BLE_UART.h in Sources */ = {isa = PBXBuildFile; fileRef = AAAA141009013031AA000008 /* Adafruit_BLE_UART.h */; };
+		AAA2141009013031AA000009 /* old_adafruit.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAAA141009013031AA000009 /* old_adafruit.cpp */; };
+		AAA2141009013031AA00000B /* aci.h in Sources */ = {isa = PBXBuildFile; fileRef = AAAA141009013031AA00000B /* aci.h */; };
+		AAA2141009013031AA00000C /* aci_cmds.h in Sources */ = {isa = PBXBuildFile; fileRef = AAAA141009013031AA00000C /* aci_cmds.h */; };
+		AAA2141009013031AA00000D /* aci_evts.h in Sources */ = {isa = PBXBuildFile; fileRef = AAAA141009013031AA00000D /* aci_evts.h */; };
+		AAA2141009013031AA00000E /* aci_protocol_defines.h in Sources */ = {isa = PBXBuildFile; fileRef = AAAA141009013031AA00000E /* aci_protocol_defines.h */; };
+		AAA2141009013031AA00000F /* aci_queue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAAA141009013031AA00000F /* aci_queue.cpp */; };
+		AAA2141009013031AA000010 /* aci_queue.h in Sources */ = {isa = PBXBuildFile; fileRef = AAAA141009013031AA000010 /* aci_queue.h */; };
+		AAA2141009013031AA000011 /* aci_setup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAAA141009013031AA000011 /* aci_setup.cpp */; };
+		AAA2141009013031AA000012 /* aci_setup.h in Sources */ = {isa = PBXBuildFile; fileRef = AAAA141009013031AA000012 /* aci_setup.h */; };
+		AAA2141009013031AA000013 /* acilib.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAAA141009013031AA000013 /* acilib.cpp */; };
+		AAA2141009013031AA000014 /* acilib.h in Sources */ = {isa = PBXBuildFile; fileRef = AAAA141009013031AA000014 /* acilib.h */; };
+		AAA2141009013031AA000015 /* acilib_defs.h in Sources */ = {isa = PBXBuildFile; fileRef = AAAA141009013031AA000015 /* acilib_defs.h */; };
+		AAA2141009013031AA000016 /* acilib_if.h in Sources */ = {isa = PBXBuildFile; fileRef = AAAA141009013031AA000016 /* acilib_if.h */; };
+		AAA2141009013031AA000017 /* acilib_types.h in Sources */ = {isa = PBXBuildFile; fileRef = AAAA141009013031AA000017 /* acilib_types.h */; };
+		AAA2141009013031AA000018 /* ble_assert.h in Sources */ = {isa = PBXBuildFile; fileRef = AAAA141009013031AA000018 /* ble_assert.h */; };
+		AAA2141009013031AA000019 /* boards.h in Sources */ = {isa = PBXBuildFile; fileRef = AAAA141009013031AA000019 /* boards.h */; };
+		AAA2141009013031AA00001A /* dfu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAAA141009013031AA00001A /* dfu.cpp */; };
+		AAA2141009013031AA00001B /* dfu.h in Sources */ = {isa = PBXBuildFile; fileRef = AAAA141009013031AA00001B /* dfu.h */; };
+		AAA2141009013031AA00001C /* dtm.h in Sources */ = {isa = PBXBuildFile; fileRef = AAAA141009013031AA00001C /* dtm.h */; };
+		AAA2141009013031AA00001D /* hal_aci_tl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAAA141009013031AA00001D /* hal_aci_tl.cpp */; };
+		AAA2141009013031AA00001E /* hal_aci_tl.h in Sources */ = {isa = PBXBuildFile; fileRef = AAAA141009013031AA00001E /* hal_aci_tl.h */; };
+		AAA2141009013031AA00001F /* hal_platform.h in Sources */ = {isa = PBXBuildFile; fileRef = AAAA141009013031AA00001F /* hal_platform.h */; };
+		AAA2141009013031AA000020 /* lib_aci.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAAA141009013031AA000020 /* lib_aci.cpp */; };
+		AAA2141009013031AA000021 /* lib_aci.h in Sources */ = {isa = PBXBuildFile; fileRef = AAAA141009013031AA000021 /* lib_aci.h */; };
+		AAA2141009013031AA000023 /* services.h in Sources */ = {isa = PBXBuildFile; fileRef = AAAA141009013031AA000023 /* services.h */; };
+		AAA2141009013031AA000024 /* services_lock.h in Sources */ = {isa = PBXBuildFile; fileRef = AAAA141009013031AA000024 /* services_lock.h */; };
+		AAA2141009013031AA000025 /* uart_over_ble.h in Sources */ = {isa = PBXBuildFile; fileRef = AAAA141009013031AA000025 /* uart_over_ble.h */; };
+		AAA2141009013031AA000027 /* CmdMessenger.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAAA141009013031AA000027 /* CmdMessenger.cpp */; };
+		AAA2141009013031AA000028 /* CmdMessenger.h in Sources */ = {isa = PBXBuildFile; fileRef = AAAA141009013031AA000028 /* CmdMessenger.h */; };
+		AAA2141009013031AA00002B /* 6-ArduinoController.csproj in Sources */ = {isa = PBXBuildFile; fileRef = AAAA141009013031AA00002B /* 6-ArduinoController.csproj */; };
+		AAA2141009013031AA00002C /* ArduinoController.cs in Sources */ = {isa = PBXBuildFile; fileRef = AAAA141009013031AA00002C /* ArduinoController.cs */; };
+		AAA2141009013031AA00002D /* ControllerForm.cs in Sources */ = {isa = PBXBuildFile; fileRef = AAAA141009013031AA00002D /* ControllerForm.cs */; };
+		AAA2141009013031AA00002E /* ControllerForm.Designer.cs in Sources */ = {isa = PBXBuildFile; fileRef = AAAA141009013031AA00002E /* ControllerForm.Designer.cs */; };
+		AAA2141009013031AA00002F /* Program.cs in Sources */ = {isa = PBXBuildFile; fileRef = AAAA141009013031AA00002F /* Program.cs */; };
+		AAA2141009013031AA000031 /* AssemblyInfo.cs in Sources */ = {isa = PBXBuildFile; fileRef = AAAA141009013031AA000031 /* AssemblyInfo.cs */; };
+		AAA2141009013031AA000032 /* Resources.Designer.cs in Sources */ = {isa = PBXBuildFile; fileRef = AAAA141009013031AA000032 /* Resources.Designer.cs */; };
+		AAA2141009013031AA000033 /* Settings.Designer.cs in Sources */ = {isa = PBXBuildFile; fileRef = AAAA141009013031AA000033 /* Settings.Designer.cs */; };
+		AAA2141009013031AA000036 /* BinaryConverter.cs in Sources */ = {isa = PBXBuildFile; fileRef = AAAA141009013031AA000036 /* BinaryConverter.cs */; };
+		AAA2141009013031AA000038 /* BluetoothConnectionManager.cs in Sources */ = {isa = PBXBuildFile; fileRef = AAAA141009013031AA000038 /* BluetoothConnectionManager.cs */; };
+		AAA2141009013031AA000039 /* BluetoothSettings.cs in Sources */ = {isa = PBXBuildFile; fileRef = AAAA141009013031AA000039 /* BluetoothSettings.cs */; };
+		AAA2141009013031AA00003A /* BluetoothTransport.cs in Sources */ = {isa = PBXBuildFile; fileRef = AAAA141009013031AA00003A /* BluetoothTransport.cs */; };
+		AAA2141009013031AA00003B /* BluetoothUtils.cs in Sources */ = {isa = PBXBuildFile; fileRef = AAAA141009013031AA00003B /* BluetoothUtils.cs */; };
+		AAA2141009013031AA00003C /* CmdMessenger.cs in Sources */ = {isa = PBXBuildFile; fileRef = AAAA141009013031AA00003C /* CmdMessenger.cs */; };
+		AAA2141009013031AA00003D /* Command.cs in Sources */ = {isa = PBXBuildFile; fileRef = AAAA141009013031AA00003D /* Command.cs */; };
+		AAA2141009013031AA00003E /* CommandMessenger.csproj in Sources */ = {isa = PBXBuildFile; fileRef = AAAA141009013031AA00003E /* CommandMessenger.csproj */; };
+		AAA2141009013031AA00003F /* CommandMessenger.csproj.user in Sources */ = {isa = PBXBuildFile; fileRef = AAAA141009013031AA00003F /* CommandMessenger.csproj.user */; };
+		AAA2141009013031AA000040 /* CommunicationManager.cs in Sources */ = {isa = PBXBuildFile; fileRef = AAAA141009013031AA000040 /* CommunicationManager.cs */; };
+		AAA2141009013031AA000042 /* IConnectionManager.cs in Sources */ = {isa = PBXBuildFile; fileRef = AAAA141009013031AA000042 /* IConnectionManager.cs */; };
+		AAA2141009013031AA000043 /* ConnectionManager.cs in Sources */ = {isa = PBXBuildFile; fileRef = AAAA141009013031AA000043 /* ConnectionManager.cs */; };
+		AAA2141009013031AA000044 /* ConsoleUtils.cs in Sources */ = {isa = PBXBuildFile; fileRef = AAAA141009013031AA000044 /* ConsoleUtils.cs */; };
+		AAA2141009013031AA000045 /* DisposableObject.cs in Sources */ = {isa = PBXBuildFile; fileRef = AAAA141009013031AA000045 /* DisposableObject.cs */; };
+		AAA2141009013031AA000046 /* DisposeStack.cs in Sources */ = {isa = PBXBuildFile; fileRef = AAAA141009013031AA000046 /* DisposeStack.cs */; };
+		AAA2141009013031AA000047 /* Escaped.cs in Sources */ = {isa = PBXBuildFile; fileRef = AAAA141009013031AA000047 /* Escaped.cs */; };
+		AAA2141009013031AA000048 /* EventWaiter.cs in Sources */ = {isa = PBXBuildFile; fileRef = AAAA141009013031AA000048 /* EventWaiter.cs */; };
+		AAA2141009013031AA000049 /* NewLineEvent.cs in Sources */ = {isa = PBXBuildFile; fileRef = AAAA141009013031AA000049 /* NewLineEvent.cs */; };
+		AAA2141009013031AA00004B /* AssemblyInfo.cs in Sources */ = {isa = PBXBuildFile; fileRef = AAAA141009013031AA00004B /* AssemblyInfo.cs */; };
+		AAA2141009013031AA00004D /* CollapseCommandStrategy.cs in Sources */ = {isa = PBXBuildFile; fileRef = AAAA141009013031AA00004D /* CollapseCommandStrategy.cs */; };
+		AAA2141009013031AA00004E /* CommandQueue.cs in Sources */ = {isa = PBXBuildFile; fileRef = AAAA141009013031AA00004E /* CommandQueue.cs */; };
+		AAA2141009013031AA00004F /* CommandStrategy.cs in Sources */ = {isa = PBXBuildFile; fileRef = AAAA141009013031AA00004F /* CommandStrategy.cs */; };
+		AAA2141009013031AA000050 /* GeneralStrategy.cs in Sources */ = {isa = PBXBuildFile; fileRef = AAAA141009013031AA000050 /* GeneralStrategy.cs */; };
+		AAA2141009013031AA000051 /* ListQueue.cs in Sources */ = {isa = PBXBuildFile; fileRef = AAAA141009013031AA000051 /* ListQueue.cs */; };
+		AAA2141009013031AA000052 /* QueueSpeed.cs in Sources */ = {isa = PBXBuildFile; fileRef = AAAA141009013031AA000052 /* QueueSpeed.cs */; };
+		AAA2141009013031AA000053 /* ReceiveCommandQueue.cs in Sources */ = {isa = PBXBuildFile; fileRef = AAAA141009013031AA000053 /* ReceiveCommandQueue.cs */; };
+		AAA2141009013031AA000054 /* SendCommandQueue.cs in Sources */ = {isa = PBXBuildFile; fileRef = AAAA141009013031AA000054 /* SendCommandQueue.cs */; };
+		AAA2141009013031AA000055 /* StaleGeneralStrategy.cs in Sources */ = {isa = PBXBuildFile; fileRef = AAAA141009013031AA000055 /* StaleGeneralStrategy.cs */; };
+		AAA2141009013031AA000056 /* TopCommandStrategy.cs in Sources */ = {isa = PBXBuildFile; fileRef = AAAA141009013031AA000056 /* TopCommandStrategy.cs */; };
+		AAA2141009013031AA000057 /* ReceivedCommand.cs in Sources */ = {isa = PBXBuildFile; fileRef = AAAA141009013031AA000057 /* ReceivedCommand.cs */; };
+		AAA2141009013031AA000058 /* SendCommand.cs in Sources */ = {isa = PBXBuildFile; fileRef = AAAA141009013031AA000058 /* SendCommand.cs */; };
+		AAA2141009013031AA000059 /* Sender.cs in Sources */ = {isa = PBXBuildFile; fileRef = AAAA141009013031AA000059 /* Sender.cs */; };
+		AAA2141009013031AA00005B /* SerialConnectionManager.cs in Sources */ = {isa = PBXBuildFile; fileRef = AAAA141009013031AA00005B /* SerialConnectionManager.cs */; };
+		AAA2141009013031AA00005C /* SerialSettings.cs in Sources */ = {isa = PBXBuildFile; fileRef = AAAA141009013031AA00005C /* SerialSettings.cs */; };
+		AAA2141009013031AA00005D /* SerialTransport.cs in Sources */ = {isa = PBXBuildFile; fileRef = AAAA141009013031AA00005D /* SerialTransport.cs */; };
+		AAA2141009013031AA00005E /* StringUtils.cs in Sources */ = {isa = PBXBuildFile; fileRef = AAAA141009013031AA00005E /* StringUtils.cs */; };
+		AAA2141009013031AA00005F /* StructSerializer.cs in Sources */ = {isa = PBXBuildFile; fileRef = AAAA141009013031AA00005F /* StructSerializer.cs */; };
+		AAA2141009013031AA000060 /* TimedAction.cs in Sources */ = {isa = PBXBuildFile; fileRef = AAAA141009013031AA000060 /* TimedAction.cs */; };
+		AAA2141009013031AA000061 /* TimeUtils.cs in Sources */ = {isa = PBXBuildFile; fileRef = AAAA141009013031AA000061 /* TimeUtils.cs */; };
+		AAA2141009013031AA000063 /* ITransport.cs in Sources */ = {isa = PBXBuildFile; fileRef = AAAA141009013031AA000063 /* ITransport.cs */; };
+		AAA2141009013031AA000064 /* Logger.cs in Sources */ = {isa = PBXBuildFile; fileRef = AAAA141009013031AA000064 /* Logger.cs */; };
+		AAA2141009013031AA000066 /* CommandMessengerTest.cs in Sources */ = {isa = PBXBuildFile; fileRef = AAAA141009013031AA000066 /* CommandMessengerTest.cs */; };
+		AAA2141009013031AA000067 /* CommandMessengerTests.csproj in Sources */ = {isa = PBXBuildFile; fileRef = AAAA141009013031AA000067 /* CommandMessengerTests.csproj */; };
+		AAA2141009013031AA000068 /* Common.cs in Sources */ = {isa = PBXBuildFile; fileRef = AAAA141009013031AA000068 /* Common.cs */; };
+		AAA2141009013031AA000069 /* Enumerator.cs in Sources */ = {isa = PBXBuildFile; fileRef = AAAA141009013031AA000069 /* Enumerator.cs */; };
+		AAA2141009013031AA00006A /* Program.cs in Sources */ = {isa = PBXBuildFile; fileRef = AAAA141009013031AA00006A /* Program.cs */; };
+		AAA2141009013031AA00006C /* AssemblyInfo.cs in Sources */ = {isa = PBXBuildFile; fileRef = AAAA141009013031AA00006C /* AssemblyInfo.cs */; };
+		AAA2141009013031AA00006D /* systemSettings.cs in Sources */ = {isa = PBXBuildFile; fileRef = AAAA141009013031AA00006D /* systemSettings.cs */; };
+		AAA2141009013031AA00006F /* Acknowledge.cs in Sources */ = {isa = PBXBuildFile; fileRef = AAAA141009013031AA00006F /* Acknowledge.cs */; };
+		AAA2141009013031AA000070 /* BinaryTextData.cs in Sources */ = {isa = PBXBuildFile; fileRef = AAAA141009013031AA000070 /* BinaryTextData.cs */; };
+		AAA2141009013031AA000071 /* ClearTextData.cs in Sources */ = {isa = PBXBuildFile; fileRef = AAAA141009013031AA000071 /* ClearTextData.cs */; };
+		AAA2141009013031AA000072 /* DoubleConverter.cs in Sources */ = {isa = PBXBuildFile; fileRef = AAAA141009013031AA000072 /* DoubleConverter.cs */; };
+		AAA2141009013031AA000073 /* MultipleArguments.cs in Sources */ = {isa = PBXBuildFile; fileRef = AAAA141009013031AA000073 /* MultipleArguments.cs */; };
+		AAA2141009013031AA000074 /* Random.cs in Sources */ = {isa = PBXBuildFile; fileRef = AAAA141009013031AA000074 /* Random.cs */; };
+		AAA2141009013031AA000075 /* SetupConnection.cs in Sources */ = {isa = PBXBuildFile; fileRef = AAAA141009013031AA000075 /* SetupConnection.cs */; };
+		AAA2141009013031AA000076 /* TransferSpeed.cs in Sources */ = {isa = PBXBuildFile; fileRef = AAAA141009013031AA000076 /* TransferSpeed.cs */; };
+		AAA2141009013031AA000077 /* TimedAction.cs in Sources */ = {isa = PBXBuildFile; fileRef = AAAA141009013031AA000077 /* TimedAction.cs */; };
+		AAA2141009013031AA000079 /* 5-DataLogging.csproj in Sources */ = {isa = PBXBuildFile; fileRef = AAAA141009013031AA000079 /* 5-DataLogging.csproj */; };
+		AAA2141009013031AA00007A /* ChartForm.cs in Sources */ = {isa = PBXBuildFile; fileRef = AAAA141009013031AA00007A /* ChartForm.cs */; };
+		AAA2141009013031AA00007B /* ChartForm.Designer.cs in Sources */ = {isa = PBXBuildFile; fileRef = AAAA141009013031AA00007B /* ChartForm.Designer.cs */; };
+		AAA2141009013031AA00007C /* DataLogging.cs in Sources */ = {isa = PBXBuildFile; fileRef = AAAA141009013031AA00007C /* DataLogging.cs */; };
+		AAA2141009013031AA00007D /* Program.cs in Sources */ = {isa = PBXBuildFile; fileRef = AAAA141009013031AA00007D /* Program.cs */; };
+		AAA2141009013031AA00007F /* AssemblyInfo.cs in Sources */ = {isa = PBXBuildFile; fileRef = AAAA141009013031AA00007F /* AssemblyInfo.cs */; };
+		AAA2141009013031AA000080 /* Resources.Designer.cs in Sources */ = {isa = PBXBuildFile; fileRef = AAAA141009013031AA000080 /* Resources.Designer.cs */; };
+		AAA2141009013031AA000081 /* Settings.Designer.cs in Sources */ = {isa = PBXBuildFile; fileRef = AAAA141009013031AA000081 /* Settings.Designer.cs */; };
+		AAA2141009013031AA000083 /* 1-Receive.csproj in Sources */ = {isa = PBXBuildFile; fileRef = AAAA141009013031AA000083 /* 1-Receive.csproj */; };
+		AAA2141009013031AA000084 /* Program.cs in Sources */ = {isa = PBXBuildFile; fileRef = AAAA141009013031AA000084 /* Program.cs */; };
+		AAA2141009013031AA000086 /* AssemblyInfo.cs in Sources */ = {isa = PBXBuildFile; fileRef = AAAA141009013031AA000086 /* AssemblyInfo.cs */; };
+		AAA2141009013031AA000087 /* Receive.cs in Sources */ = {isa = PBXBuildFile; fileRef = AAAA141009013031AA000087 /* Receive.cs */; };
+		AAA2141009013031AA000089 /* 2-SendAndReceive.csproj in Sources */ = {isa = PBXBuildFile; fileRef = AAAA141009013031AA000089 /* 2-SendAndReceive.csproj */; };
+		AAA2141009013031AA00008A /* Program.cs in Sources */ = {isa = PBXBuildFile; fileRef = AAAA141009013031AA00008A /* Program.cs */; };
+		AAA2141009013031AA00008C /* AssemblyInfo.cs in Sources */ = {isa = PBXBuildFile; fileRef = AAAA141009013031AA00008C /* AssemblyInfo.cs */; };
+		AAA2141009013031AA00008D /* SendAndReceive.cs in Sources */ = {isa = PBXBuildFile; fileRef = AAAA141009013031AA00008D /* SendAndReceive.cs */; };
+		AAA2141009013031AA00008F /* 3-SendAndReceiveArguments.csproj in Sources */ = {isa = PBXBuildFile; fileRef = AAAA141009013031AA00008F /* 3-SendAndReceiveArguments.csproj */; };
+		AAA2141009013031AA000090 /* Program.cs in Sources */ = {isa = PBXBuildFile; fileRef = AAAA141009013031AA000090 /* Program.cs */; };
+		AAA2141009013031AA000092 /* AssemblyInfo.cs in Sources */ = {isa = PBXBuildFile; fileRef = AAAA141009013031AA000092 /* AssemblyInfo.cs */; };
+		AAA2141009013031AA000093 /* SendAndReceiveArguments.cs in Sources */ = {isa = PBXBuildFile; fileRef = AAAA141009013031AA000093 /* SendAndReceiveArguments.cs */; };
+		AAA2141009013031AA000095 /* 4-SendAndReceiveBinaryArguments.csproj in Sources */ = {isa = PBXBuildFile; fileRef = AAAA141009013031AA000095 /* 4-SendAndReceiveBinaryArguments.csproj */; };
+		AAA2141009013031AA000096 /* Program.cs in Sources */ = {isa = PBXBuildFile; fileRef = AAAA141009013031AA000096 /* Program.cs */; };
+		AAA2141009013031AA000098 /* AssemblyInfo.cs in Sources */ = {isa = PBXBuildFile; fileRef = AAAA141009013031AA000098 /* AssemblyInfo.cs */; };
+		AAA2141009013031AA000099 /* SendAndReceiveBinaryArguments.cs in Sources */ = {isa = PBXBuildFile; fileRef = AAAA141009013031AA000099 /* SendAndReceiveBinaryArguments.cs */; };
+		AAA2141009013031AA00009B /* 7-TemperatureControl.csproj in Sources */ = {isa = PBXBuildFile; fileRef = AAAA141009013031AA00009B /* 7-TemperatureControl.csproj */; };
+		AAA2141009013031AA00009C /* ChartForm.cs in Sources */ = {isa = PBXBuildFile; fileRef = AAAA141009013031AA00009C /* ChartForm.cs */; };
+		AAA2141009013031AA00009D /* ChartForm.Designer.cs in Sources */ = {isa = PBXBuildFile; fileRef = AAAA141009013031AA00009D /* ChartForm.Designer.cs */; };
+		AAA2141009013031AA00009E /* LoggingView.cs in Sources */ = {isa = PBXBuildFile; fileRef = AAAA141009013031AA00009E /* LoggingView.cs */; };
+		AAA2141009013031AA00009F /* LoggingView.Designer.cs in Sources */ = {isa = PBXBuildFile; fileRef = AAAA141009013031AA00009F /* LoggingView.Designer.cs */; };
+		AAA2141009013031AA0000A0 /* Program.cs in Sources */ = {isa = PBXBuildFile; fileRef = AAAA141009013031AA0000A0 /* Program.cs */; };
+		AAA2141009013031AA0000A2 /* AssemblyInfo.cs in Sources */ = {isa = PBXBuildFile; fileRef = AAAA141009013031AA0000A2 /* AssemblyInfo.cs */; };
+		AAA2141009013031AA0000A3 /* Resources.Designer.cs in Sources */ = {isa = PBXBuildFile; fileRef = AAAA141009013031AA0000A3 /* Resources.Designer.cs */; };
+		AAA2141009013031AA0000A4 /* Settings.Designer.cs in Sources */ = {isa = PBXBuildFile; fileRef = AAAA141009013031AA0000A4 /* Settings.Designer.cs */; };
+		AAA2141009013031AA0000A5 /* TemperatureControl.cs in Sources */ = {isa = PBXBuildFile; fileRef = AAAA141009013031AA0000A5 /* TemperatureControl.cs */; };
+		AAA2141009013031AA0000CB /* LPD8806.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAAA141009013031AA0000CB /* LPD8806.cpp */; };
+		AAA2141009013031AA0000CC /* LPD8806.h in Sources */ = {isa = PBXBuildFile; fileRef = AAAA141009013031AA0000CC /* LPD8806.h */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		29D701A219E67F1300649898 /* Index */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Index; sourceTree = BUILT_PRODUCTS_DIR; };
+		29D701A519E67F1300649898 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		29D701A719E67F1300649898 /* LocalLibrary.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = LocalLibrary.cpp; sourceTree = "<group>"; };
+		29D701A919E67F1300649898 /* LocalLibrary.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocalLibrary.h; sourceTree = "<group>"; };
+		29D701AA19E67F1300649898 /* Makefile */ = {isa = PBXFileReference; explicitFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
+		29D701AD19E67F1300649898 /* Sketchbook.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = Sketchbook.txt; path = Sketchbook/Sketchbook.txt; sourceTree = "<group>"; };
+		29D701AF19E67F1300649898 /* 4D Systems PICadillo 35T.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = "4D Systems PICadillo 35T.xcconfig"; path = "Configurations/4D Systems PICadillo 35T.xcconfig"; sourceTree = "<group>"; };
+		29D701B019E67F1300649898 /* Arduino Due.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = "Arduino Due.xcconfig"; path = "Configurations/Arduino Due.xcconfig"; sourceTree = "<group>"; };
+		29D701B119E67F1300649898 /* Arduino Duemilanove.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = "Arduino Duemilanove.xcconfig"; path = "Configurations/Arduino Duemilanove.xcconfig"; sourceTree = "<group>"; };
+		29D701B219E67F1300649898 /* Arduino Leonardo.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = "Arduino Leonardo.xcconfig"; path = "Configurations/Arduino Leonardo.xcconfig"; sourceTree = "<group>"; };
+		29D701B319E67F1300649898 /* Arduino Mega 2560.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = "Arduino Mega 2560.xcconfig"; path = "Configurations/Arduino Mega 2560.xcconfig"; sourceTree = "<group>"; };
+		29D701B419E67F1300649898 /* Arduino Micro.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = "Arduino Micro.xcconfig"; path = "Configurations/Arduino Micro.xcconfig"; sourceTree = "<group>"; };
+		29D701B519E67F1300649898 /* Arduino Pro with ATmega328-3.3V.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = "Arduino Pro with ATmega328-3.3V.xcconfig"; path = "Configurations/Arduino Pro with ATmega328-3.3V.xcconfig"; sourceTree = "<group>"; };
+		29D701B619E67F1300649898 /* Arduino Pro with ATmega328-5V.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = "Arduino Pro with ATmega328-5V.xcconfig"; path = "Configurations/Arduino Pro with ATmega328-5V.xcconfig"; sourceTree = "<group>"; };
+		29D701B719E67F1300649898 /* Arduino Mini with ATmega168.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = "Arduino Mini with ATmega168.xcconfig"; path = "Configurations/Arduino Mini with ATmega168.xcconfig"; sourceTree = "<group>"; };
+		29D701B819E67F1300649898 /* Arduino Mini with ATmega328.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = "Arduino Mini with ATmega328.xcconfig"; path = "Configurations/Arduino Mini with ATmega328.xcconfig"; sourceTree = "<group>"; };
+		29D701B919E67F1300649898 /* Arduino Nano with ATmega168.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = "Arduino Nano with ATmega168.xcconfig"; path = "Configurations/Arduino Nano with ATmega168.xcconfig"; sourceTree = "<group>"; };
+		29D701BA19E67F1300649898 /* Arduino Nano with ATmega328.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = "Arduino Nano with ATmega328.xcconfig"; path = "Configurations/Arduino Nano with ATmega328.xcconfig"; sourceTree = "<group>"; };
+		29D701BB19E67F1300649898 /* Arduino Robot Control.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = "Arduino Robot Control.xcconfig"; path = "Configurations/Arduino Robot Control.xcconfig"; sourceTree = "<group>"; };
+		29D701BC19E67F1300649898 /* Arduino Robot Motor.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = "Arduino Robot Motor.xcconfig"; path = "Configurations/Arduino Robot Motor.xcconfig"; sourceTree = "<group>"; };
+		29D701BD19E67F1300649898 /* Arduino Uno.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = "Arduino Uno.xcconfig"; path = "Configurations/Arduino Uno.xcconfig"; sourceTree = "<group>"; };
+		29D701BE19E67F1300649898 /* Arduino Yun.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = "Arduino Yun.xcconfig"; path = "Configurations/Arduino Yun.xcconfig"; sourceTree = "<group>"; };
+		29D701BF19E67F1300649898 /* chipKIT Uno32.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = "chipKIT Uno32.xcconfig"; path = "Configurations/chipKIT Uno32.xcconfig"; sourceTree = "<group>"; };
+		29D701C019E67F1300649898 /* chipKIT Max32.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = "chipKIT Max32.xcconfig"; path = "Configurations/chipKIT Max32.xcconfig"; sourceTree = "<group>"; };
+		29D701C119E67F1300649898 /* chipKIT uC32.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = "chipKIT uC32.xcconfig"; path = "Configurations/chipKIT uC32.xcconfig"; sourceTree = "<group>"; };
+		29D701C219E67F1300649898 /* DFRobot BLuno.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = "DFRobot BLuno.xcconfig"; path = "Configurations/DFRobot BLuno.xcconfig"; sourceTree = "<group>"; };
+		29D701C319E67F1300649898 /* Digispark Tiny Core.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = "Digispark Tiny Core.xcconfig"; path = "Configurations/Digispark Tiny Core.xcconfig"; sourceTree = "<group>"; };
+		29D701C419E67F1300649898 /* Experimeter Board with MSP430FR5739.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = "Experimeter Board with MSP430FR5739.xcconfig"; path = "Configurations/Experimeter Board with MSP430FR5739.xcconfig"; sourceTree = "<group>"; };
+		29D701C519E67F1300649898 /* Intel Galileo.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = "Intel Galileo.xcconfig"; path = "Configurations/Intel Galileo.xcconfig"; sourceTree = "<group>"; };
+		29D701C619E67F1300649898 /* Intel Galileo Gen2.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = "Intel Galileo Gen2.xcconfig"; path = "Configurations/Intel Galileo Gen2.xcconfig"; sourceTree = "<group>"; };
+		29D701C719E67F1300649898 /* LaunchPad WiFi with CC3200.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = "LaunchPad WiFi with CC3200.xcconfig"; path = "Configurations/LaunchPad WiFi with CC3200.xcconfig"; sourceTree = "<group>"; };
+		29D701C819E67F1300649898 /* LaunchPad Stellaris with LM4F120.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = "LaunchPad Stellaris with LM4F120.xcconfig"; path = "Configurations/LaunchPad Stellaris with LM4F120.xcconfig"; sourceTree = "<group>"; };
+		29D701C919E67F1300649898 /* LaunchPad Tiva C with TM4C123.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = "LaunchPad Tiva C with TM4C123.xcconfig"; path = "Configurations/LaunchPad Tiva C with TM4C123.xcconfig"; sourceTree = "<group>"; };
+		29D701CA19E67F1300649898 /* LaunchPad Tiva C with TM4C129.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = "LaunchPad Tiva C with TM4C129.xcconfig"; path = "Configurations/LaunchPad Tiva C with TM4C129.xcconfig"; sourceTree = "<group>"; };
+		29D701CB19E67F1300649898 /* LaunchPad with MSP430G2553.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = "LaunchPad with MSP430G2553.xcconfig"; path = "Configurations/LaunchPad with MSP430G2553.xcconfig"; sourceTree = "<group>"; };
+		29D701CC19E67F1300649898 /* LaunchPad with MSP430G2231.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = "LaunchPad with MSP430G2231.xcconfig"; path = "Configurations/LaunchPad with MSP430G2231.xcconfig"; sourceTree = "<group>"; };
+		29D701CD19E67F1300649898 /* LaunchPad with MSP430G2452.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = "LaunchPad with MSP430G2452.xcconfig"; path = "Configurations/LaunchPad with MSP430G2452.xcconfig"; sourceTree = "<group>"; };
+		29D701CE19E67F1300649898 /* LaunchPad with MSP430F5529.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = "LaunchPad with MSP430F5529.xcconfig"; path = "Configurations/LaunchPad with MSP430F5529.xcconfig"; sourceTree = "<group>"; };
+		29D701CF19E67F1300649898 /* LaunchPad with MSP430FR5969.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = "LaunchPad with MSP430FR5969.xcconfig"; path = "Configurations/LaunchPad with MSP430FR5969.xcconfig"; sourceTree = "<group>"; };
+		29D701D019E67F1300649898 /* Maple Flash revision 3+.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = "Maple Flash revision 3+.xcconfig"; path = "Configurations/Maple Flash revision 3+.xcconfig"; sourceTree = "<group>"; };
+		29D701D119E67F1300649898 /* Microduino Core with ATmega328-5V.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = "Microduino Core with ATmega328-5V.xcconfig"; path = "Configurations/Microduino Core with ATmega328-5V.xcconfig"; sourceTree = "<group>"; };
+		29D701D219E67F1300649898 /* Microduino Core32u4 with ATmega328U4-5V.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = "Microduino Core32u4 with ATmega328U4-5V.xcconfig"; path = "Configurations/Microduino Core32u4 with ATmega328U4-5V.xcconfig"; sourceTree = "<group>"; };
+		29D701D319E67F1300649898 /* Microduino Core+ with ATmega644-5V.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = "Microduino Core+ with ATmega644-5V.xcconfig"; path = "Configurations/Microduino Core+ with ATmega644-5V.xcconfig"; sourceTree = "<group>"; };
+		29D701D419E67F1300649898 /* Sparkfun Uno.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = "Sparkfun Uno.xcconfig"; path = "Configurations/Sparkfun Uno.xcconfig"; sourceTree = "<group>"; };
+		29D701D519E67F1300649898 /* Teensy 2.0.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = "Teensy 2.0.xcconfig"; path = "Configurations/Teensy 2.0.xcconfig"; sourceTree = "<group>"; };
+		29D701D619E67F1300649898 /* Teensy 3.0.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = "Teensy 3.0.xcconfig"; path = "Configurations/Teensy 3.0.xcconfig"; sourceTree = "<group>"; };
+		29D701D719E67F1300649898 /* Teensy 3.1.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = "Teensy 3.1.xcconfig"; path = "Configurations/Teensy 3.1.xcconfig"; sourceTree = "<group>"; };
+		29D701D819E67F1300649898 /* Wiring S.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = "Wiring S.xcconfig"; path = "Configurations/Wiring S.xcconfig"; sourceTree = "<group>"; };
+		29D701DA19E67F1300649898 /* Arduino.mk */ = {isa = PBXFileReference; explicitFileType = sourcecode.make; name = Arduino.mk; path = Makefiles/Arduino.mk; sourceTree = "<group>"; };
+		29D701DB19E67F1300649898 /* Arduino1.mk */ = {isa = PBXFileReference; explicitFileType = sourcecode.make; name = Arduino1.mk; path = Makefiles/Arduino1.mk; sourceTree = "<group>"; };
+		29D701DC19E67F1300649898 /* Arduino15avr.mk */ = {isa = PBXFileReference; explicitFileType = sourcecode.make; name = Arduino15avr.mk; path = Makefiles/Arduino15avr.mk; sourceTree = "<group>"; };
+		29D701DD19E67F1300649898 /* Arduino15sam.mk */ = {isa = PBXFileReference; explicitFileType = sourcecode.make; name = Arduino15sam.mk; path = Makefiles/Arduino15sam.mk; sourceTree = "<group>"; };
+		29D701DE19E67F1300649898 /* Arduino23.mk */ = {isa = PBXFileReference; explicitFileType = sourcecode.make; name = Arduino23.mk; path = Makefiles/Arduino23.mk; sourceTree = "<group>"; };
+		29D701DF19E67F1300649898 /* Digispark.mk */ = {isa = PBXFileReference; explicitFileType = sourcecode.make; name = Digispark.mk; path = Makefiles/Digispark.mk; sourceTree = "<group>"; };
+		29D701E019E67F1300649898 /* EnergiaMSP430.mk */ = {isa = PBXFileReference; explicitFileType = sourcecode.make; name = EnergiaMSP430.mk; path = Makefiles/EnergiaMSP430.mk; sourceTree = "<group>"; };
+		29D701E119E67F1300649898 /* EnergiaLM4F.mk */ = {isa = PBXFileReference; explicitFileType = sourcecode.make; name = EnergiaLM4F.mk; path = Makefiles/EnergiaLM4F.mk; sourceTree = "<group>"; };
+		29D701E219E67F1300649898 /* EnergiaCC3200.mk */ = {isa = PBXFileReference; explicitFileType = sourcecode.make; name = EnergiaCC3200.mk; path = Makefiles/EnergiaCC3200.mk; sourceTree = "<group>"; };
+		29D701E319E67F1300649898 /* Galileo.mk */ = {isa = PBXFileReference; explicitFileType = sourcecode.make; name = Galileo.mk; path = Makefiles/Galileo.mk; sourceTree = "<group>"; };
+		29D701E419E67F1300649898 /* MapleIDE.mk */ = {isa = PBXFileReference; explicitFileType = sourcecode.make; name = MapleIDE.mk; path = Makefiles/MapleIDE.mk; sourceTree = "<group>"; };
+		29D701E519E67F1300649898 /* Microduino.mk */ = {isa = PBXFileReference; explicitFileType = sourcecode.make; name = Microduino.mk; path = Makefiles/Microduino.mk; sourceTree = "<group>"; };
+		29D701E619E67F1300649898 /* Mpide.mk */ = {isa = PBXFileReference; explicitFileType = sourcecode.make; name = Mpide.mk; path = Makefiles/Mpide.mk; sourceTree = "<group>"; };
+		29D701E719E67F1300649898 /* Wiring.mk */ = {isa = PBXFileReference; explicitFileType = sourcecode.make; name = Wiring.mk; path = Makefiles/Wiring.mk; sourceTree = "<group>"; };
+		29D701E819E67F1300649898 /* Step1.mk */ = {isa = PBXFileReference; explicitFileType = sourcecode.make; name = Step1.mk; path = Makefiles/Step1.mk; sourceTree = "<group>"; };
+		29D701E919E67F1300649898 /* Step2.mk */ = {isa = PBXFileReference; explicitFileType = sourcecode.make; name = Step2.mk; path = Makefiles/Step2.mk; sourceTree = "<group>"; };
+		29D701EA19E67F1300649898 /* Teensy.mk */ = {isa = PBXFileReference; explicitFileType = sourcecode.make; name = Teensy.mk; path = Makefiles/Teensy.mk; sourceTree = "<group>"; };
+		29D701EB19E67F1300649898 /* Teensy2.mk */ = {isa = PBXFileReference; explicitFileType = sourcecode.make; name = Teensy2.mk; path = Makefiles/Teensy2.mk; sourceTree = "<group>"; };
+		29D701EC19E67F1300649898 /* Teensy3.mk */ = {isa = PBXFileReference; explicitFileType = sourcecode.make; name = Teensy3.mk; path = Makefiles/Teensy3.mk; sourceTree = "<group>"; };
+		29D701ED19E67F1300649898 /* Avrdude.mk */ = {isa = PBXFileReference; explicitFileType = sourcecode.make; name = Avrdude.mk; path = Makefiles/Avrdude.mk; sourceTree = "<group>"; };
+		29D701F019E67F1300649898 /* About.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = About.txt; path = About/About.txt; sourceTree = "<group>"; };
+		29D701F219E67F1300649898 /* reset.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; name = reset.py; path = Utilities/reset.py; sourceTree = "<group>"; };
+		29D701F319E67F1300649898 /* serial1200.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; name = serial1200.py; path = Utilities/serial1200.py; sourceTree = "<group>"; };
+		29D701F519E67F1300649898 /* embedXcode_check */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; name = embedXcode_check; path = Utilities/embedXcode_check; sourceTree = "<group>"; };
+		29D701F619E67F1300649898 /* embedXcode_chrono */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; name = embedXcode_chrono; path = Utilities/embedXcode_chrono; sourceTree = "<group>"; };
+		29D701F719E67F1300649898 /* TemplateIcon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = TemplateIcon.icns; path = Utilities/TemplateIcon.icns; sourceTree = "<group>"; };
+		29D701F819E67F1300649898 /* clupload_osx.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = clupload_osx.sh; path = Utilities/clupload_osx.sh; sourceTree = "<group>"; };
+		29D701F919E67F1300649898 /* hippiestick.ino */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; path = hippiestick.ino; sourceTree = "<group>"; };
+		29D7020B19E6803100649898 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../../README.md; sourceTree = "<group>"; };
+		AAAA141009013031AA000007 /* Adafruit_BLE_UART.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Adafruit_BLE_UART.cpp; sourceTree = "<group>"; };
+		AAAA141009013031AA000008 /* Adafruit_BLE_UART.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Adafruit_BLE_UART.h; sourceTree = "<group>"; };
+		AAAA141009013031AA000009 /* old_adafruit.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = old_adafruit.cpp; sourceTree = "<group>"; };
+		AAAA141009013031AA00000B /* aci.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aci.h; sourceTree = "<group>"; };
+		AAAA141009013031AA00000C /* aci_cmds.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aci_cmds.h; sourceTree = "<group>"; };
+		AAAA141009013031AA00000D /* aci_evts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aci_evts.h; sourceTree = "<group>"; };
+		AAAA141009013031AA00000E /* aci_protocol_defines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aci_protocol_defines.h; sourceTree = "<group>"; };
+		AAAA141009013031AA00000F /* aci_queue.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = aci_queue.cpp; sourceTree = "<group>"; };
+		AAAA141009013031AA000010 /* aci_queue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aci_queue.h; sourceTree = "<group>"; };
+		AAAA141009013031AA000011 /* aci_setup.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = aci_setup.cpp; sourceTree = "<group>"; };
+		AAAA141009013031AA000012 /* aci_setup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aci_setup.h; sourceTree = "<group>"; };
+		AAAA141009013031AA000013 /* acilib.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = acilib.cpp; sourceTree = "<group>"; };
+		AAAA141009013031AA000014 /* acilib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = acilib.h; sourceTree = "<group>"; };
+		AAAA141009013031AA000015 /* acilib_defs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = acilib_defs.h; sourceTree = "<group>"; };
+		AAAA141009013031AA000016 /* acilib_if.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = acilib_if.h; sourceTree = "<group>"; };
+		AAAA141009013031AA000017 /* acilib_types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = acilib_types.h; sourceTree = "<group>"; };
+		AAAA141009013031AA000018 /* ble_assert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ble_assert.h; sourceTree = "<group>"; };
+		AAAA141009013031AA000019 /* boards.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = boards.h; sourceTree = "<group>"; };
+		AAAA141009013031AA00001A /* dfu.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = dfu.cpp; sourceTree = "<group>"; };
+		AAAA141009013031AA00001B /* dfu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dfu.h; sourceTree = "<group>"; };
+		AAAA141009013031AA00001C /* dtm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dtm.h; sourceTree = "<group>"; };
+		AAAA141009013031AA00001D /* hal_aci_tl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = hal_aci_tl.cpp; sourceTree = "<group>"; };
+		AAAA141009013031AA00001E /* hal_aci_tl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hal_aci_tl.h; sourceTree = "<group>"; };
+		AAAA141009013031AA00001F /* hal_platform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hal_platform.h; sourceTree = "<group>"; };
+		AAAA141009013031AA000020 /* lib_aci.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lib_aci.cpp; sourceTree = "<group>"; };
+		AAAA141009013031AA000021 /* lib_aci.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lib_aci.h; sourceTree = "<group>"; };
+		AAAA141009013031AA000023 /* services.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = services.h; sourceTree = "<group>"; };
+		AAAA141009013031AA000024 /* services_lock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = services_lock.h; sourceTree = "<group>"; };
+		AAAA141009013031AA000025 /* uart_over_ble.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = uart_over_ble.h; sourceTree = "<group>"; };
+		AAAA141009013031AA000027 /* CmdMessenger.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CmdMessenger.cpp; sourceTree = "<group>"; };
+		AAAA141009013031AA000028 /* CmdMessenger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CmdMessenger.h; sourceTree = "<group>"; };
+		AAAA141009013031AA00002B /* 6-ArduinoController.csproj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "6-ArduinoController.csproj"; sourceTree = "<group>"; };
+		AAAA141009013031AA00002C /* ArduinoController.cs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ArduinoController.cs; sourceTree = "<group>"; };
+		AAAA141009013031AA00002D /* ControllerForm.cs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ControllerForm.cs; sourceTree = "<group>"; };
+		AAAA141009013031AA00002E /* ControllerForm.Designer.cs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ControllerForm.Designer.cs; sourceTree = "<group>"; };
+		AAAA141009013031AA00002F /* Program.cs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Program.cs; sourceTree = "<group>"; };
+		AAAA141009013031AA000031 /* AssemblyInfo.cs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = AssemblyInfo.cs; sourceTree = "<group>"; };
+		AAAA141009013031AA000032 /* Resources.Designer.cs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Resources.Designer.cs; sourceTree = "<group>"; };
+		AAAA141009013031AA000033 /* Settings.Designer.cs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Settings.Designer.cs; sourceTree = "<group>"; };
+		AAAA141009013031AA000036 /* BinaryConverter.cs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = BinaryConverter.cs; sourceTree = "<group>"; };
+		AAAA141009013031AA000038 /* BluetoothConnectionManager.cs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = BluetoothConnectionManager.cs; sourceTree = "<group>"; };
+		AAAA141009013031AA000039 /* BluetoothSettings.cs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = BluetoothSettings.cs; sourceTree = "<group>"; };
+		AAAA141009013031AA00003A /* BluetoothTransport.cs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = BluetoothTransport.cs; sourceTree = "<group>"; };
+		AAAA141009013031AA00003B /* BluetoothUtils.cs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = BluetoothUtils.cs; sourceTree = "<group>"; };
+		AAAA141009013031AA00003C /* CmdMessenger.cs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = CmdMessenger.cs; sourceTree = "<group>"; };
+		AAAA141009013031AA00003D /* Command.cs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Command.cs; sourceTree = "<group>"; };
+		AAAA141009013031AA00003E /* CommandMessenger.csproj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = CommandMessenger.csproj; sourceTree = "<group>"; };
+		AAAA141009013031AA00003F /* CommandMessenger.csproj.user */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = CommandMessenger.csproj.user; sourceTree = "<group>"; };
+		AAAA141009013031AA000040 /* CommunicationManager.cs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = CommunicationManager.cs; sourceTree = "<group>"; };
+		AAAA141009013031AA000042 /* IConnectionManager.cs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = IConnectionManager.cs; sourceTree = "<group>"; };
+		AAAA141009013031AA000043 /* ConnectionManager.cs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ConnectionManager.cs; sourceTree = "<group>"; };
+		AAAA141009013031AA000044 /* ConsoleUtils.cs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ConsoleUtils.cs; sourceTree = "<group>"; };
+		AAAA141009013031AA000045 /* DisposableObject.cs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = DisposableObject.cs; sourceTree = "<group>"; };
+		AAAA141009013031AA000046 /* DisposeStack.cs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = DisposeStack.cs; sourceTree = "<group>"; };
+		AAAA141009013031AA000047 /* Escaped.cs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Escaped.cs; sourceTree = "<group>"; };
+		AAAA141009013031AA000048 /* EventWaiter.cs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = EventWaiter.cs; sourceTree = "<group>"; };
+		AAAA141009013031AA000049 /* NewLineEvent.cs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = NewLineEvent.cs; sourceTree = "<group>"; };
+		AAAA141009013031AA00004B /* AssemblyInfo.cs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = AssemblyInfo.cs; sourceTree = "<group>"; };
+		AAAA141009013031AA00004D /* CollapseCommandStrategy.cs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = CollapseCommandStrategy.cs; sourceTree = "<group>"; };
+		AAAA141009013031AA00004E /* CommandQueue.cs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = CommandQueue.cs; sourceTree = "<group>"; };
+		AAAA141009013031AA00004F /* CommandStrategy.cs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = CommandStrategy.cs; sourceTree = "<group>"; };
+		AAAA141009013031AA000050 /* GeneralStrategy.cs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = GeneralStrategy.cs; sourceTree = "<group>"; };
+		AAAA141009013031AA000051 /* ListQueue.cs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ListQueue.cs; sourceTree = "<group>"; };
+		AAAA141009013031AA000052 /* QueueSpeed.cs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = QueueSpeed.cs; sourceTree = "<group>"; };
+		AAAA141009013031AA000053 /* ReceiveCommandQueue.cs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ReceiveCommandQueue.cs; sourceTree = "<group>"; };
+		AAAA141009013031AA000054 /* SendCommandQueue.cs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SendCommandQueue.cs; sourceTree = "<group>"; };
+		AAAA141009013031AA000055 /* StaleGeneralStrategy.cs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = StaleGeneralStrategy.cs; sourceTree = "<group>"; };
+		AAAA141009013031AA000056 /* TopCommandStrategy.cs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = TopCommandStrategy.cs; sourceTree = "<group>"; };
+		AAAA141009013031AA000057 /* ReceivedCommand.cs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ReceivedCommand.cs; sourceTree = "<group>"; };
+		AAAA141009013031AA000058 /* SendCommand.cs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SendCommand.cs; sourceTree = "<group>"; };
+		AAAA141009013031AA000059 /* Sender.cs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Sender.cs; sourceTree = "<group>"; };
+		AAAA141009013031AA00005B /* SerialConnectionManager.cs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SerialConnectionManager.cs; sourceTree = "<group>"; };
+		AAAA141009013031AA00005C /* SerialSettings.cs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SerialSettings.cs; sourceTree = "<group>"; };
+		AAAA141009013031AA00005D /* SerialTransport.cs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SerialTransport.cs; sourceTree = "<group>"; };
+		AAAA141009013031AA00005E /* StringUtils.cs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = StringUtils.cs; sourceTree = "<group>"; };
+		AAAA141009013031AA00005F /* StructSerializer.cs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = StructSerializer.cs; sourceTree = "<group>"; };
+		AAAA141009013031AA000060 /* TimedAction.cs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = TimedAction.cs; sourceTree = "<group>"; };
+		AAAA141009013031AA000061 /* TimeUtils.cs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = TimeUtils.cs; sourceTree = "<group>"; };
+		AAAA141009013031AA000063 /* ITransport.cs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ITransport.cs; sourceTree = "<group>"; };
+		AAAA141009013031AA000064 /* Logger.cs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Logger.cs; sourceTree = "<group>"; };
+		AAAA141009013031AA000066 /* CommandMessengerTest.cs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = CommandMessengerTest.cs; sourceTree = "<group>"; };
+		AAAA141009013031AA000067 /* CommandMessengerTests.csproj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = CommandMessengerTests.csproj; sourceTree = "<group>"; };
+		AAAA141009013031AA000068 /* Common.cs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Common.cs; sourceTree = "<group>"; };
+		AAAA141009013031AA000069 /* Enumerator.cs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Enumerator.cs; sourceTree = "<group>"; };
+		AAAA141009013031AA00006A /* Program.cs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Program.cs; sourceTree = "<group>"; };
+		AAAA141009013031AA00006C /* AssemblyInfo.cs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = AssemblyInfo.cs; sourceTree = "<group>"; };
+		AAAA141009013031AA00006D /* systemSettings.cs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = systemSettings.cs; sourceTree = "<group>"; };
+		AAAA141009013031AA00006F /* Acknowledge.cs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Acknowledge.cs; sourceTree = "<group>"; };
+		AAAA141009013031AA000070 /* BinaryTextData.cs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = BinaryTextData.cs; sourceTree = "<group>"; };
+		AAAA141009013031AA000071 /* ClearTextData.cs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ClearTextData.cs; sourceTree = "<group>"; };
+		AAAA141009013031AA000072 /* DoubleConverter.cs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = DoubleConverter.cs; sourceTree = "<group>"; };
+		AAAA141009013031AA000073 /* MultipleArguments.cs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = MultipleArguments.cs; sourceTree = "<group>"; };
+		AAAA141009013031AA000074 /* Random.cs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Random.cs; sourceTree = "<group>"; };
+		AAAA141009013031AA000075 /* SetupConnection.cs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SetupConnection.cs; sourceTree = "<group>"; };
+		AAAA141009013031AA000076 /* TransferSpeed.cs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = TransferSpeed.cs; sourceTree = "<group>"; };
+		AAAA141009013031AA000077 /* TimedAction.cs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = TimedAction.cs; sourceTree = "<group>"; };
+		AAAA141009013031AA000079 /* 5-DataLogging.csproj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "5-DataLogging.csproj"; sourceTree = "<group>"; };
+		AAAA141009013031AA00007A /* ChartForm.cs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ChartForm.cs; sourceTree = "<group>"; };
+		AAAA141009013031AA00007B /* ChartForm.Designer.cs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ChartForm.Designer.cs; sourceTree = "<group>"; };
+		AAAA141009013031AA00007C /* DataLogging.cs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = DataLogging.cs; sourceTree = "<group>"; };
+		AAAA141009013031AA00007D /* Program.cs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Program.cs; sourceTree = "<group>"; };
+		AAAA141009013031AA00007F /* AssemblyInfo.cs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = AssemblyInfo.cs; sourceTree = "<group>"; };
+		AAAA141009013031AA000080 /* Resources.Designer.cs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Resources.Designer.cs; sourceTree = "<group>"; };
+		AAAA141009013031AA000081 /* Settings.Designer.cs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Settings.Designer.cs; sourceTree = "<group>"; };
+		AAAA141009013031AA000083 /* 1-Receive.csproj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "1-Receive.csproj"; sourceTree = "<group>"; };
+		AAAA141009013031AA000084 /* Program.cs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Program.cs; sourceTree = "<group>"; };
+		AAAA141009013031AA000086 /* AssemblyInfo.cs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = AssemblyInfo.cs; sourceTree = "<group>"; };
+		AAAA141009013031AA000087 /* Receive.cs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Receive.cs; sourceTree = "<group>"; };
+		AAAA141009013031AA000089 /* 2-SendAndReceive.csproj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "2-SendAndReceive.csproj"; sourceTree = "<group>"; };
+		AAAA141009013031AA00008A /* Program.cs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Program.cs; sourceTree = "<group>"; };
+		AAAA141009013031AA00008C /* AssemblyInfo.cs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = AssemblyInfo.cs; sourceTree = "<group>"; };
+		AAAA141009013031AA00008D /* SendAndReceive.cs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SendAndReceive.cs; sourceTree = "<group>"; };
+		AAAA141009013031AA00008F /* 3-SendAndReceiveArguments.csproj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "3-SendAndReceiveArguments.csproj"; sourceTree = "<group>"; };
+		AAAA141009013031AA000090 /* Program.cs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Program.cs; sourceTree = "<group>"; };
+		AAAA141009013031AA000092 /* AssemblyInfo.cs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = AssemblyInfo.cs; sourceTree = "<group>"; };
+		AAAA141009013031AA000093 /* SendAndReceiveArguments.cs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SendAndReceiveArguments.cs; sourceTree = "<group>"; };
+		AAAA141009013031AA000095 /* 4-SendAndReceiveBinaryArguments.csproj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "4-SendAndReceiveBinaryArguments.csproj"; sourceTree = "<group>"; };
+		AAAA141009013031AA000096 /* Program.cs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Program.cs; sourceTree = "<group>"; };
+		AAAA141009013031AA000098 /* AssemblyInfo.cs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = AssemblyInfo.cs; sourceTree = "<group>"; };
+		AAAA141009013031AA000099 /* SendAndReceiveBinaryArguments.cs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SendAndReceiveBinaryArguments.cs; sourceTree = "<group>"; };
+		AAAA141009013031AA00009B /* 7-TemperatureControl.csproj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "7-TemperatureControl.csproj"; sourceTree = "<group>"; };
+		AAAA141009013031AA00009C /* ChartForm.cs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ChartForm.cs; sourceTree = "<group>"; };
+		AAAA141009013031AA00009D /* ChartForm.Designer.cs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ChartForm.Designer.cs; sourceTree = "<group>"; };
+		AAAA141009013031AA00009E /* LoggingView.cs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = LoggingView.cs; sourceTree = "<group>"; };
+		AAAA141009013031AA00009F /* LoggingView.Designer.cs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = LoggingView.Designer.cs; sourceTree = "<group>"; };
+		AAAA141009013031AA0000A0 /* Program.cs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Program.cs; sourceTree = "<group>"; };
+		AAAA141009013031AA0000A2 /* AssemblyInfo.cs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = AssemblyInfo.cs; sourceTree = "<group>"; };
+		AAAA141009013031AA0000A3 /* Resources.Designer.cs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Resources.Designer.cs; sourceTree = "<group>"; };
+		AAAA141009013031AA0000A4 /* Settings.Designer.cs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Settings.Designer.cs; sourceTree = "<group>"; };
+		AAAA141009013031AA0000A5 /* TemperatureControl.cs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = TemperatureControl.cs; sourceTree = "<group>"; };
+		AAAA141009013031AA0000CB /* LPD8806.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LPD8806.cpp; sourceTree = "<group>"; };
+		AAAA141009013031AA0000CC /* LPD8806.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPD8806.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		29D7019719E67F1300649898 = {
+			isa = PBXGroup;
+			children = (
+				29D701A419E67F1300649898 /* hippiestick */,
+				29D701A319E67F1300649898 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		29D701A319E67F1300649898 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				29D701A219E67F1300649898 /* Index */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		29D701A419E67F1300649898 /* hippiestick */ = {
+			isa = PBXGroup;
+			children = (
+				29D701A519E67F1300649898 /* main.cpp */,
+				29D701A719E67F1300649898 /* LocalLibrary.cpp */,
+				29D701A919E67F1300649898 /* LocalLibrary.h */,
+				29D701AA19E67F1300649898 /* Makefile */,
+				29D7020B19E6803100649898 /* README.md */,
+				29D701F919E67F1300649898 /* hippiestick.ino */,
+				29D701AC19E67F1300649898 /* Sketchbook */,
+				29D701AE19E67F1300649898 /* Configurations */,
+				29D701D919E67F1300649898 /* Makefiles */,
+				29D701EF19E67F1300649898 /* About */,
+				29D701F119E67F1300649898 /* Utilities */,
+			);
+			path = hippiestick;
+			sourceTree = "<group>";
+		};
+		29D701AC19E67F1300649898 /* Sketchbook */ = {
+			isa = PBXGroup;
+			children = (
+				29D701AD19E67F1300649898 /* Sketchbook.txt */,
+				AAAA141009013031AA000005 /* Libraries */,
+			);
+			name = Sketchbook;
+			sourceTree = "<group>";
+		};
+		29D701AE19E67F1300649898 /* Configurations */ = {
+			isa = PBXGroup;
+			children = (
+				29D701AF19E67F1300649898 /* 4D Systems PICadillo 35T.xcconfig */,
+				29D701B019E67F1300649898 /* Arduino Due.xcconfig */,
+				29D701B119E67F1300649898 /* Arduino Duemilanove.xcconfig */,
+				29D701B219E67F1300649898 /* Arduino Leonardo.xcconfig */,
+				29D701B319E67F1300649898 /* Arduino Mega 2560.xcconfig */,
+				29D701B419E67F1300649898 /* Arduino Micro.xcconfig */,
+				29D701B519E67F1300649898 /* Arduino Pro with ATmega328-3.3V.xcconfig */,
+				29D701B619E67F1300649898 /* Arduino Pro with ATmega328-5V.xcconfig */,
+				29D701B719E67F1300649898 /* Arduino Mini with ATmega168.xcconfig */,
+				29D701B819E67F1300649898 /* Arduino Mini with ATmega328.xcconfig */,
+				29D701B919E67F1300649898 /* Arduino Nano with ATmega168.xcconfig */,
+				29D701BA19E67F1300649898 /* Arduino Nano with ATmega328.xcconfig */,
+				29D701BB19E67F1300649898 /* Arduino Robot Control.xcconfig */,
+				29D701BC19E67F1300649898 /* Arduino Robot Motor.xcconfig */,
+				29D701BD19E67F1300649898 /* Arduino Uno.xcconfig */,
+				29D701BE19E67F1300649898 /* Arduino Yun.xcconfig */,
+				29D701BF19E67F1300649898 /* chipKIT Uno32.xcconfig */,
+				29D701C019E67F1300649898 /* chipKIT Max32.xcconfig */,
+				29D701C119E67F1300649898 /* chipKIT uC32.xcconfig */,
+				29D701C219E67F1300649898 /* DFRobot BLuno.xcconfig */,
+				29D701C319E67F1300649898 /* Digispark Tiny Core.xcconfig */,
+				29D701C419E67F1300649898 /* Experimeter Board with MSP430FR5739.xcconfig */,
+				29D701C519E67F1300649898 /* Intel Galileo.xcconfig */,
+				29D701C619E67F1300649898 /* Intel Galileo Gen2.xcconfig */,
+				29D701C719E67F1300649898 /* LaunchPad WiFi with CC3200.xcconfig */,
+				29D701C819E67F1300649898 /* LaunchPad Stellaris with LM4F120.xcconfig */,
+				29D701C919E67F1300649898 /* LaunchPad Tiva C with TM4C123.xcconfig */,
+				29D701CA19E67F1300649898 /* LaunchPad Tiva C with TM4C129.xcconfig */,
+				29D701CB19E67F1300649898 /* LaunchPad with MSP430G2553.xcconfig */,
+				29D701CC19E67F1300649898 /* LaunchPad with MSP430G2231.xcconfig */,
+				29D701CD19E67F1300649898 /* LaunchPad with MSP430G2452.xcconfig */,
+				29D701CE19E67F1300649898 /* LaunchPad with MSP430F5529.xcconfig */,
+				29D701CF19E67F1300649898 /* LaunchPad with MSP430FR5969.xcconfig */,
+				29D701D019E67F1300649898 /* Maple Flash revision 3+.xcconfig */,
+				29D701D119E67F1300649898 /* Microduino Core with ATmega328-5V.xcconfig */,
+				29D701D219E67F1300649898 /* Microduino Core32u4 with ATmega328U4-5V.xcconfig */,
+				29D701D319E67F1300649898 /* Microduino Core+ with ATmega644-5V.xcconfig */,
+				29D701D419E67F1300649898 /* Sparkfun Uno.xcconfig */,
+				29D701D519E67F1300649898 /* Teensy 2.0.xcconfig */,
+				29D701D619E67F1300649898 /* Teensy 3.0.xcconfig */,
+				29D701D719E67F1300649898 /* Teensy 3.1.xcconfig */,
+				29D701D819E67F1300649898 /* Wiring S.xcconfig */,
+			);
+			name = Configurations;
+			sourceTree = "<group>";
+		};
+		29D701D919E67F1300649898 /* Makefiles */ = {
+			isa = PBXGroup;
+			children = (
+				29D701DA19E67F1300649898 /* Arduino.mk */,
+				29D701DB19E67F1300649898 /* Arduino1.mk */,
+				29D701DC19E67F1300649898 /* Arduino15avr.mk */,
+				29D701DD19E67F1300649898 /* Arduino15sam.mk */,
+				29D701DE19E67F1300649898 /* Arduino23.mk */,
+				29D701DF19E67F1300649898 /* Digispark.mk */,
+				29D701E019E67F1300649898 /* EnergiaMSP430.mk */,
+				29D701E119E67F1300649898 /* EnergiaLM4F.mk */,
+				29D701E219E67F1300649898 /* EnergiaCC3200.mk */,
+				29D701E319E67F1300649898 /* Galileo.mk */,
+				29D701E419E67F1300649898 /* MapleIDE.mk */,
+				29D701E519E67F1300649898 /* Microduino.mk */,
+				29D701E619E67F1300649898 /* Mpide.mk */,
+				29D701E719E67F1300649898 /* Wiring.mk */,
+				29D701E819E67F1300649898 /* Step1.mk */,
+				29D701E919E67F1300649898 /* Step2.mk */,
+				29D701EA19E67F1300649898 /* Teensy.mk */,
+				29D701EB19E67F1300649898 /* Teensy2.mk */,
+				29D701EC19E67F1300649898 /* Teensy3.mk */,
+				29D701ED19E67F1300649898 /* Avrdude.mk */,
+			);
+			name = Makefiles;
+			sourceTree = "<group>";
+		};
+		29D701EF19E67F1300649898 /* About */ = {
+			isa = PBXGroup;
+			children = (
+				29D701F019E67F1300649898 /* About.txt */,
+			);
+			name = About;
+			sourceTree = "<group>";
+		};
+		29D701F119E67F1300649898 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				29D701F219E67F1300649898 /* reset.py */,
+				29D701F319E67F1300649898 /* serial1200.py */,
+				29D701F519E67F1300649898 /* embedXcode_check */,
+				29D701F619E67F1300649898 /* embedXcode_chrono */,
+				29D701F719E67F1300649898 /* TemplateIcon.icns */,
+				29D701F819E67F1300649898 /* clupload_osx.sh */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
+		AAAA141009013031AA000005 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				AAAA141009013031AA000006 /* Adafruit_nRF8001 */,
+				AAAA141009013031AA000026 /* CmdMessenger */,
+				AAAA141009013031AA0000CA /* LPD8806 */,
+			);
+			name = Libraries;
+			path = /Users/gr4yscale/Documents/Arduino/libraries;
+			sourceTree = SDKROOT;
+		};
+		AAAA141009013031AA000006 /* Adafruit_nRF8001 */ = {
+			isa = PBXGroup;
+			children = (
+				AAAA141009013031AA000007 /* Adafruit_BLE_UART.cpp */,
+				AAAA141009013031AA000008 /* Adafruit_BLE_UART.h */,
+				AAAA141009013031AA000009 /* old_adafruit.cpp */,
+				AAAA141009013031AA00000A /* utility */,
+			);
+			path = Adafruit_nRF8001;
+			sourceTree = "<group>";
+		};
+		AAAA141009013031AA00000A /* utility */ = {
+			isa = PBXGroup;
+			children = (
+				AAAA141009013031AA00000B /* aci.h */,
+				AAAA141009013031AA00000C /* aci_cmds.h */,
+				AAAA141009013031AA00000D /* aci_evts.h */,
+				AAAA141009013031AA00000E /* aci_protocol_defines.h */,
+				AAAA141009013031AA00000F /* aci_queue.cpp */,
+				AAAA141009013031AA000010 /* aci_queue.h */,
+				AAAA141009013031AA000011 /* aci_setup.cpp */,
+				AAAA141009013031AA000012 /* aci_setup.h */,
+				AAAA141009013031AA000013 /* acilib.cpp */,
+				AAAA141009013031AA000014 /* acilib.h */,
+				AAAA141009013031AA000015 /* acilib_defs.h */,
+				AAAA141009013031AA000016 /* acilib_if.h */,
+				AAAA141009013031AA000017 /* acilib_types.h */,
+				AAAA141009013031AA000018 /* ble_assert.h */,
+				AAAA141009013031AA000019 /* boards.h */,
+				AAAA141009013031AA00001A /* dfu.cpp */,
+				AAAA141009013031AA00001B /* dfu.h */,
+				AAAA141009013031AA00001C /* dtm.h */,
+				AAAA141009013031AA00001D /* hal_aci_tl.cpp */,
+				AAAA141009013031AA00001E /* hal_aci_tl.h */,
+				AAAA141009013031AA00001F /* hal_platform.h */,
+				AAAA141009013031AA000020 /* lib_aci.cpp */,
+				AAAA141009013031AA000021 /* lib_aci.h */,
+				AAAA141009013031AA000022 /* uart */,
+			);
+			path = utility;
+			sourceTree = "<group>";
+		};
+		AAAA141009013031AA000022 /* uart */ = {
+			isa = PBXGroup;
+			children = (
+				AAAA141009013031AA000023 /* services.h */,
+				AAAA141009013031AA000024 /* services_lock.h */,
+				AAAA141009013031AA000025 /* uart_over_ble.h */,
+			);
+			path = uart;
+			sourceTree = "<group>";
+		};
+		AAAA141009013031AA000026 /* CmdMessenger */ = {
+			isa = PBXGroup;
+			children = (
+				AAAA141009013031AA000027 /* CmdMessenger.cpp */,
+				AAAA141009013031AA000028 /* CmdMessenger.h */,
+				AAAA141009013031AA000029 /* CSharp */,
+			);
+			path = CmdMessenger;
+			sourceTree = "<group>";
+		};
+		AAAA141009013031AA000029 /* CSharp */ = {
+			isa = PBXGroup;
+			children = (
+				AAAA141009013031AA00002A /* ArduinoController */,
+				AAAA141009013031AA000035 /* CommandMessenger */,
+				AAAA141009013031AA000065 /* CommandMessengerTests */,
+				AAAA141009013031AA000078 /* DataLogging */,
+				AAAA141009013031AA000082 /* Receive */,
+				AAAA141009013031AA000088 /* SendAndReceive */,
+				AAAA141009013031AA00008E /* SendAndReceiveArguments */,
+				AAAA141009013031AA000094 /* SendAndReceiveBinaryArguments */,
+				AAAA141009013031AA00009A /* TemperatureControl */,
+			);
+			path = CSharp;
+			sourceTree = "<group>";
+		};
+		AAAA141009013031AA00002A /* ArduinoController */ = {
+			isa = PBXGroup;
+			children = (
+				AAAA141009013031AA00002B /* 6-ArduinoController.csproj */,
+				AAAA141009013031AA00002C /* ArduinoController.cs */,
+				AAAA141009013031AA00002D /* ControllerForm.cs */,
+				AAAA141009013031AA00002E /* ControllerForm.Designer.cs */,
+				AAAA141009013031AA00002F /* Program.cs */,
+				AAAA141009013031AA000030 /* Properties */,
+			);
+			path = ArduinoController;
+			sourceTree = "<group>";
+		};
+		AAAA141009013031AA000030 /* Properties */ = {
+			isa = PBXGroup;
+			children = (
+				AAAA141009013031AA000031 /* AssemblyInfo.cs */,
+				AAAA141009013031AA000032 /* Resources.Designer.cs */,
+				AAAA141009013031AA000033 /* Settings.Designer.cs */,
+			);
+			path = Properties;
+			sourceTree = "<group>";
+		};
+		AAAA141009013031AA000035 /* CommandMessenger */ = {
+			isa = PBXGroup;
+			children = (
+				AAAA141009013031AA000036 /* BinaryConverter.cs */,
+				AAAA141009013031AA000037 /* Bluetooth */,
+				AAAA141009013031AA00003C /* CmdMessenger.cs */,
+				AAAA141009013031AA00003D /* Command.cs */,
+				AAAA141009013031AA00003E /* CommandMessenger.csproj */,
+				AAAA141009013031AA00003F /* CommandMessenger.csproj.user */,
+				AAAA141009013031AA000040 /* CommunicationManager.cs */,
+				AAAA141009013031AA000041 /* ConnectionManager */,
+				AAAA141009013031AA000043 /* ConnectionManager.cs */,
+				AAAA141009013031AA000044 /* ConsoleUtils.cs */,
+				AAAA141009013031AA000045 /* DisposableObject.cs */,
+				AAAA141009013031AA000046 /* DisposeStack.cs */,
+				AAAA141009013031AA000047 /* Escaped.cs */,
+				AAAA141009013031AA000048 /* EventWaiter.cs */,
+				AAAA141009013031AA000049 /* NewLineEvent.cs */,
+				AAAA141009013031AA00004A /* Properties */,
+				AAAA141009013031AA00004C /* Queue */,
+				AAAA141009013031AA000057 /* ReceivedCommand.cs */,
+				AAAA141009013031AA000058 /* SendCommand.cs */,
+				AAAA141009013031AA000059 /* Sender.cs */,
+				AAAA141009013031AA00005A /* Serialport */,
+				AAAA141009013031AA00005E /* StringUtils.cs */,
+				AAAA141009013031AA00005F /* StructSerializer.cs */,
+				AAAA141009013031AA000060 /* TimedAction.cs */,
+				AAAA141009013031AA000061 /* TimeUtils.cs */,
+				AAAA141009013031AA000062 /* TransportLayer */,
+			);
+			path = CommandMessenger;
+			sourceTree = "<group>";
+		};
+		AAAA141009013031AA000037 /* Bluetooth */ = {
+			isa = PBXGroup;
+			children = (
+				AAAA141009013031AA000038 /* BluetoothConnectionManager.cs */,
+				AAAA141009013031AA000039 /* BluetoothSettings.cs */,
+				AAAA141009013031AA00003A /* BluetoothTransport.cs */,
+				AAAA141009013031AA00003B /* BluetoothUtils.cs */,
+			);
+			path = Bluetooth;
+			sourceTree = "<group>";
+		};
+		AAAA141009013031AA000041 /* ConnectionManager */ = {
+			isa = PBXGroup;
+			children = (
+				AAAA141009013031AA000042 /* IConnectionManager.cs */,
+			);
+			path = ConnectionManager;
+			sourceTree = "<group>";
+		};
+		AAAA141009013031AA00004A /* Properties */ = {
+			isa = PBXGroup;
+			children = (
+				AAAA141009013031AA00004B /* AssemblyInfo.cs */,
+			);
+			path = Properties;
+			sourceTree = "<group>";
+		};
+		AAAA141009013031AA00004C /* Queue */ = {
+			isa = PBXGroup;
+			children = (
+				AAAA141009013031AA00004D /* CollapseCommandStrategy.cs */,
+				AAAA141009013031AA00004E /* CommandQueue.cs */,
+				AAAA141009013031AA00004F /* CommandStrategy.cs */,
+				AAAA141009013031AA000050 /* GeneralStrategy.cs */,
+				AAAA141009013031AA000051 /* ListQueue.cs */,
+				AAAA141009013031AA000052 /* QueueSpeed.cs */,
+				AAAA141009013031AA000053 /* ReceiveCommandQueue.cs */,
+				AAAA141009013031AA000054 /* SendCommandQueue.cs */,
+				AAAA141009013031AA000055 /* StaleGeneralStrategy.cs */,
+				AAAA141009013031AA000056 /* TopCommandStrategy.cs */,
+			);
+			path = Queue;
+			sourceTree = "<group>";
+		};
+		AAAA141009013031AA00005A /* Serialport */ = {
+			isa = PBXGroup;
+			children = (
+				AAAA141009013031AA00005B /* SerialConnectionManager.cs */,
+				AAAA141009013031AA00005C /* SerialSettings.cs */,
+				AAAA141009013031AA00005D /* SerialTransport.cs */,
+			);
+			path = Serialport;
+			sourceTree = "<group>";
+		};
+		AAAA141009013031AA000062 /* TransportLayer */ = {
+			isa = PBXGroup;
+			children = (
+				AAAA141009013031AA000063 /* ITransport.cs */,
+				AAAA141009013031AA000064 /* Logger.cs */,
+			);
+			path = TransportLayer;
+			sourceTree = "<group>";
+		};
+		AAAA141009013031AA000065 /* CommandMessengerTests */ = {
+			isa = PBXGroup;
+			children = (
+				AAAA141009013031AA000066 /* CommandMessengerTest.cs */,
+				AAAA141009013031AA000067 /* CommandMessengerTests.csproj */,
+				AAAA141009013031AA000068 /* Common.cs */,
+				AAAA141009013031AA000069 /* Enumerator.cs */,
+				AAAA141009013031AA00006A /* Program.cs */,
+				AAAA141009013031AA00006B /* Properties */,
+				AAAA141009013031AA00006D /* systemSettings.cs */,
+				AAAA141009013031AA00006E /* Tests */,
+				AAAA141009013031AA000077 /* TimedAction.cs */,
+			);
+			path = CommandMessengerTests;
+			sourceTree = "<group>";
+		};
+		AAAA141009013031AA00006B /* Properties */ = {
+			isa = PBXGroup;
+			children = (
+				AAAA141009013031AA00006C /* AssemblyInfo.cs */,
+			);
+			path = Properties;
+			sourceTree = "<group>";
+		};
+		AAAA141009013031AA00006E /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				AAAA141009013031AA00006F /* Acknowledge.cs */,
+				AAAA141009013031AA000070 /* BinaryTextData.cs */,
+				AAAA141009013031AA000071 /* ClearTextData.cs */,
+				AAAA141009013031AA000072 /* DoubleConverter.cs */,
+				AAAA141009013031AA000073 /* MultipleArguments.cs */,
+				AAAA141009013031AA000074 /* Random.cs */,
+				AAAA141009013031AA000075 /* SetupConnection.cs */,
+				AAAA141009013031AA000076 /* TransferSpeed.cs */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		AAAA141009013031AA000078 /* DataLogging */ = {
+			isa = PBXGroup;
+			children = (
+				AAAA141009013031AA000079 /* 5-DataLogging.csproj */,
+				AAAA141009013031AA00007A /* ChartForm.cs */,
+				AAAA141009013031AA00007B /* ChartForm.Designer.cs */,
+				AAAA141009013031AA00007C /* DataLogging.cs */,
+				AAAA141009013031AA00007D /* Program.cs */,
+				AAAA141009013031AA00007E /* Properties */,
+			);
+			path = DataLogging;
+			sourceTree = "<group>";
+		};
+		AAAA141009013031AA00007E /* Properties */ = {
+			isa = PBXGroup;
+			children = (
+				AAAA141009013031AA00007F /* AssemblyInfo.cs */,
+				AAAA141009013031AA000080 /* Resources.Designer.cs */,
+				AAAA141009013031AA000081 /* Settings.Designer.cs */,
+			);
+			path = Properties;
+			sourceTree = "<group>";
+		};
+		AAAA141009013031AA000082 /* Receive */ = {
+			isa = PBXGroup;
+			children = (
+				AAAA141009013031AA000083 /* 1-Receive.csproj */,
+				AAAA141009013031AA000084 /* Program.cs */,
+				AAAA141009013031AA000085 /* Properties */,
+				AAAA141009013031AA000087 /* Receive.cs */,
+			);
+			path = Receive;
+			sourceTree = "<group>";
+		};
+		AAAA141009013031AA000085 /* Properties */ = {
+			isa = PBXGroup;
+			children = (
+				AAAA141009013031AA000086 /* AssemblyInfo.cs */,
+			);
+			path = Properties;
+			sourceTree = "<group>";
+		};
+		AAAA141009013031AA000088 /* SendAndReceive */ = {
+			isa = PBXGroup;
+			children = (
+				AAAA141009013031AA000089 /* 2-SendAndReceive.csproj */,
+				AAAA141009013031AA00008A /* Program.cs */,
+				AAAA141009013031AA00008B /* Properties */,
+				AAAA141009013031AA00008D /* SendAndReceive.cs */,
+			);
+			path = SendAndReceive;
+			sourceTree = "<group>";
+		};
+		AAAA141009013031AA00008B /* Properties */ = {
+			isa = PBXGroup;
+			children = (
+				AAAA141009013031AA00008C /* AssemblyInfo.cs */,
+			);
+			path = Properties;
+			sourceTree = "<group>";
+		};
+		AAAA141009013031AA00008E /* SendAndReceiveArguments */ = {
+			isa = PBXGroup;
+			children = (
+				AAAA141009013031AA00008F /* 3-SendAndReceiveArguments.csproj */,
+				AAAA141009013031AA000090 /* Program.cs */,
+				AAAA141009013031AA000091 /* Properties */,
+				AAAA141009013031AA000093 /* SendAndReceiveArguments.cs */,
+			);
+			path = SendAndReceiveArguments;
+			sourceTree = "<group>";
+		};
+		AAAA141009013031AA000091 /* Properties */ = {
+			isa = PBXGroup;
+			children = (
+				AAAA141009013031AA000092 /* AssemblyInfo.cs */,
+			);
+			path = Properties;
+			sourceTree = "<group>";
+		};
+		AAAA141009013031AA000094 /* SendAndReceiveBinaryArguments */ = {
+			isa = PBXGroup;
+			children = (
+				AAAA141009013031AA000095 /* 4-SendAndReceiveBinaryArguments.csproj */,
+				AAAA141009013031AA000096 /* Program.cs */,
+				AAAA141009013031AA000097 /* Properties */,
+				AAAA141009013031AA000099 /* SendAndReceiveBinaryArguments.cs */,
+			);
+			path = SendAndReceiveBinaryArguments;
+			sourceTree = "<group>";
+		};
+		AAAA141009013031AA000097 /* Properties */ = {
+			isa = PBXGroup;
+			children = (
+				AAAA141009013031AA000098 /* AssemblyInfo.cs */,
+			);
+			path = Properties;
+			sourceTree = "<group>";
+		};
+		AAAA141009013031AA00009A /* TemperatureControl */ = {
+			isa = PBXGroup;
+			children = (
+				AAAA141009013031AA00009B /* 7-TemperatureControl.csproj */,
+				AAAA141009013031AA00009C /* ChartForm.cs */,
+				AAAA141009013031AA00009D /* ChartForm.Designer.cs */,
+				AAAA141009013031AA00009E /* LoggingView.cs */,
+				AAAA141009013031AA00009F /* LoggingView.Designer.cs */,
+				AAAA141009013031AA0000A0 /* Program.cs */,
+				AAAA141009013031AA0000A1 /* Properties */,
+				AAAA141009013031AA0000A5 /* TemperatureControl.cs */,
+			);
+			path = TemperatureControl;
+			sourceTree = "<group>";
+		};
+		AAAA141009013031AA0000A1 /* Properties */ = {
+			isa = PBXGroup;
+			children = (
+				AAAA141009013031AA0000A2 /* AssemblyInfo.cs */,
+				AAAA141009013031AA0000A3 /* Resources.Designer.cs */,
+				AAAA141009013031AA0000A4 /* Settings.Designer.cs */,
+			);
+			path = Properties;
+			sourceTree = "<group>";
+		};
+		AAAA141009013031AA0000CA /* LPD8806 */ = {
+			isa = PBXGroup;
+			children = (
+				AAAA141009013031AA0000CB /* LPD8806.cpp */,
+				AAAA141009013031AA0000CC /* LPD8806.h */,
+			);
+			path = LPD8806;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXLegacyTarget section */
+		29D7019C19E67F1300649898 /* All */ = {
+			isa = PBXLegacyTarget;
+			buildArgumentsString = all;
+			buildConfigurationList = 29D701FC19E67F1300649898 /* Build configuration list for PBXLegacyTarget "All" */;
+			buildPhases = (
+			);
+			buildToolPath = make;
+			buildWorkingDirectory = "$(PROJECT)";
+			dependencies = (
+			);
+			name = All;
+			passBuildSettingsInEnvironment = 1;
+			productName = All;
+		};
+		29D7019D19E67F1300649898 /* Build */ = {
+			isa = PBXLegacyTarget;
+			buildArgumentsString = build;
+			buildConfigurationList = 29D701FF19E67F1300649898 /* Build configuration list for PBXLegacyTarget "Build" */;
+			buildPhases = (
+			);
+			buildToolPath = make;
+			buildWorkingDirectory = "$(PROJECT)";
+			dependencies = (
+			);
+			name = Build;
+			passBuildSettingsInEnvironment = 1;
+			productName = Build;
+		};
+		29D7019E19E67F1300649898 /* Serial */ = {
+			isa = PBXLegacyTarget;
+			buildArgumentsString = serial;
+			buildConfigurationList = 29D7020219E67F1300649898 /* Build configuration list for PBXLegacyTarget "Serial" */;
+			buildPhases = (
+			);
+			buildToolPath = make;
+			buildWorkingDirectory = "$(PROJECT)";
+			dependencies = (
+			);
+			name = Serial;
+			passBuildSettingsInEnvironment = 1;
+			productName = Serial;
+		};
+		29D7019F19E67F1300649898 /* Upload */ = {
+			isa = PBXLegacyTarget;
+			buildArgumentsString = upload;
+			buildConfigurationList = 29D7020519E67F1300649898 /* Build configuration list for PBXLegacyTarget "Upload" */;
+			buildPhases = (
+			);
+			buildToolPath = make;
+			buildWorkingDirectory = "$(PROJECT)";
+			dependencies = (
+			);
+			name = Upload;
+			passBuildSettingsInEnvironment = 1;
+			productName = Upload;
+		};
+/* End PBXLegacyTarget section */
+
+/* Begin PBXNativeTarget section */
+		29D701A119E67F1300649898 /* Index */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 29D7020819E67F1300649898 /* Build configuration list for PBXNativeTarget "Index" */;
+			buildPhases = (
+				29D701A019E67F1300649898 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Index;
+			productName = Index;
+			productReference = 29D701A219E67F1300649898 /* Index */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29D7019819E67F1300649898 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0600;
+				ORGANIZATIONNAME = gr4yscale;
+				TargetAttributes = {
+					29D7019C19E67F1300649898 = {
+						CreatedOnToolsVersion = 6.0.1;
+					};
+					29D7019D19E67F1300649898 = {
+						CreatedOnToolsVersion = 6.0.1;
+					};
+					29D7019E19E67F1300649898 = {
+						CreatedOnToolsVersion = 6.0.1;
+					};
+					29D7019F19E67F1300649898 = {
+						CreatedOnToolsVersion = 6.0.1;
+					};
+					29D701A119E67F1300649898 = {
+						CreatedOnToolsVersion = 6.0.1;
+					};
+				};
+			};
+			buildConfigurationList = 29D7019B19E67F1300649898 /* Build configuration list for PBXProject "hippiestick" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 29D7019719E67F1300649898;
+			productRefGroup = 29D701A319E67F1300649898 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				29D7019C19E67F1300649898 /* All */,
+				29D7019D19E67F1300649898 /* Build */,
+				29D7019E19E67F1300649898 /* Serial */,
+				29D7019F19E67F1300649898 /* Upload */,
+				29D701A119E67F1300649898 /* Index */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		29D701A019E67F1300649898 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				29D701A619E67F1300649898 /* main.cpp in Sources */,
+				29D701A819E67F1300649898 /* LocalLibrary.cpp in Sources */,
+				29D201A919E67F1300649898 /* LocalLibrary.h in Sources */,
+				29D201F919E67F1300649898 /* hippiestick.ino in Sources */,
+				AAA2141009013031AA000007 /* Adafruit_BLE_UART.cpp in Sources */,
+				AAA2141009013031AA000008 /* Adafruit_BLE_UART.h in Sources */,
+				AAA2141009013031AA000009 /* old_adafruit.cpp in Sources */,
+				AAA2141009013031AA00000B /* aci.h in Sources */,
+				AAA2141009013031AA00000C /* aci_cmds.h in Sources */,
+				AAA2141009013031AA00000D /* aci_evts.h in Sources */,
+				AAA2141009013031AA00000E /* aci_protocol_defines.h in Sources */,
+				AAA2141009013031AA00000F /* aci_queue.cpp in Sources */,
+				AAA2141009013031AA000010 /* aci_queue.h in Sources */,
+				AAA2141009013031AA000011 /* aci_setup.cpp in Sources */,
+				AAA2141009013031AA000012 /* aci_setup.h in Sources */,
+				AAA2141009013031AA000013 /* acilib.cpp in Sources */,
+				AAA2141009013031AA000014 /* acilib.h in Sources */,
+				AAA2141009013031AA000015 /* acilib_defs.h in Sources */,
+				AAA2141009013031AA000016 /* acilib_if.h in Sources */,
+				AAA2141009013031AA000017 /* acilib_types.h in Sources */,
+				AAA2141009013031AA000018 /* ble_assert.h in Sources */,
+				AAA2141009013031AA000019 /* boards.h in Sources */,
+				AAA2141009013031AA00001A /* dfu.cpp in Sources */,
+				AAA2141009013031AA00001B /* dfu.h in Sources */,
+				AAA2141009013031AA00001C /* dtm.h in Sources */,
+				AAA2141009013031AA00001D /* hal_aci_tl.cpp in Sources */,
+				AAA2141009013031AA00001E /* hal_aci_tl.h in Sources */,
+				AAA2141009013031AA00001F /* hal_platform.h in Sources */,
+				AAA2141009013031AA000020 /* lib_aci.cpp in Sources */,
+				AAA2141009013031AA000021 /* lib_aci.h in Sources */,
+				AAA2141009013031AA000023 /* services.h in Sources */,
+				AAA2141009013031AA000024 /* services_lock.h in Sources */,
+				AAA2141009013031AA000025 /* uart_over_ble.h in Sources */,
+				AAA2141009013031AA000027 /* CmdMessenger.cpp in Sources */,
+				AAA2141009013031AA000028 /* CmdMessenger.h in Sources */,
+				AAA2141009013031AA00002B /* 6-ArduinoController.csproj in Sources */,
+				AAA2141009013031AA00002C /* ArduinoController.cs in Sources */,
+				AAA2141009013031AA00002D /* ControllerForm.cs in Sources */,
+				AAA2141009013031AA00002E /* ControllerForm.Designer.cs in Sources */,
+				AAA2141009013031AA00002F /* Program.cs in Sources */,
+				AAA2141009013031AA000031 /* AssemblyInfo.cs in Sources */,
+				AAA2141009013031AA000032 /* Resources.Designer.cs in Sources */,
+				AAA2141009013031AA000033 /* Settings.Designer.cs in Sources */,
+				AAA2141009013031AA000036 /* BinaryConverter.cs in Sources */,
+				AAA2141009013031AA000038 /* BluetoothConnectionManager.cs in Sources */,
+				AAA2141009013031AA000039 /* BluetoothSettings.cs in Sources */,
+				AAA2141009013031AA00003A /* BluetoothTransport.cs in Sources */,
+				AAA2141009013031AA00003B /* BluetoothUtils.cs in Sources */,
+				AAA2141009013031AA00003C /* CmdMessenger.cs in Sources */,
+				AAA2141009013031AA00003D /* Command.cs in Sources */,
+				AAA2141009013031AA00003E /* CommandMessenger.csproj in Sources */,
+				AAA2141009013031AA00003F /* CommandMessenger.csproj.user in Sources */,
+				AAA2141009013031AA000040 /* CommunicationManager.cs in Sources */,
+				AAA2141009013031AA000042 /* IConnectionManager.cs in Sources */,
+				AAA2141009013031AA000043 /* ConnectionManager.cs in Sources */,
+				AAA2141009013031AA000044 /* ConsoleUtils.cs in Sources */,
+				AAA2141009013031AA000045 /* DisposableObject.cs in Sources */,
+				AAA2141009013031AA000046 /* DisposeStack.cs in Sources */,
+				AAA2141009013031AA000047 /* Escaped.cs in Sources */,
+				AAA2141009013031AA000048 /* EventWaiter.cs in Sources */,
+				AAA2141009013031AA000049 /* NewLineEvent.cs in Sources */,
+				AAA2141009013031AA00004B /* AssemblyInfo.cs in Sources */,
+				AAA2141009013031AA00004D /* CollapseCommandStrategy.cs in Sources */,
+				AAA2141009013031AA00004E /* CommandQueue.cs in Sources */,
+				AAA2141009013031AA00004F /* CommandStrategy.cs in Sources */,
+				AAA2141009013031AA000050 /* GeneralStrategy.cs in Sources */,
+				AAA2141009013031AA000051 /* ListQueue.cs in Sources */,
+				AAA2141009013031AA000052 /* QueueSpeed.cs in Sources */,
+				AAA2141009013031AA000053 /* ReceiveCommandQueue.cs in Sources */,
+				AAA2141009013031AA000054 /* SendCommandQueue.cs in Sources */,
+				AAA2141009013031AA000055 /* StaleGeneralStrategy.cs in Sources */,
+				AAA2141009013031AA000056 /* TopCommandStrategy.cs in Sources */,
+				AAA2141009013031AA000057 /* ReceivedCommand.cs in Sources */,
+				AAA2141009013031AA000058 /* SendCommand.cs in Sources */,
+				AAA2141009013031AA000059 /* Sender.cs in Sources */,
+				AAA2141009013031AA00005B /* SerialConnectionManager.cs in Sources */,
+				AAA2141009013031AA00005C /* SerialSettings.cs in Sources */,
+				AAA2141009013031AA00005D /* SerialTransport.cs in Sources */,
+				AAA2141009013031AA00005E /* StringUtils.cs in Sources */,
+				AAA2141009013031AA00005F /* StructSerializer.cs in Sources */,
+				AAA2141009013031AA000060 /* TimedAction.cs in Sources */,
+				AAA2141009013031AA000061 /* TimeUtils.cs in Sources */,
+				AAA2141009013031AA000063 /* ITransport.cs in Sources */,
+				AAA2141009013031AA000064 /* Logger.cs in Sources */,
+				AAA2141009013031AA000066 /* CommandMessengerTest.cs in Sources */,
+				AAA2141009013031AA000067 /* CommandMessengerTests.csproj in Sources */,
+				AAA2141009013031AA000068 /* Common.cs in Sources */,
+				AAA2141009013031AA000069 /* Enumerator.cs in Sources */,
+				AAA2141009013031AA00006A /* Program.cs in Sources */,
+				AAA2141009013031AA00006C /* AssemblyInfo.cs in Sources */,
+				AAA2141009013031AA00006D /* systemSettings.cs in Sources */,
+				AAA2141009013031AA00006F /* Acknowledge.cs in Sources */,
+				AAA2141009013031AA000070 /* BinaryTextData.cs in Sources */,
+				AAA2141009013031AA000071 /* ClearTextData.cs in Sources */,
+				AAA2141009013031AA000072 /* DoubleConverter.cs in Sources */,
+				AAA2141009013031AA000073 /* MultipleArguments.cs in Sources */,
+				AAA2141009013031AA000074 /* Random.cs in Sources */,
+				AAA2141009013031AA000075 /* SetupConnection.cs in Sources */,
+				AAA2141009013031AA000076 /* TransferSpeed.cs in Sources */,
+				AAA2141009013031AA000077 /* TimedAction.cs in Sources */,
+				AAA2141009013031AA000079 /* 5-DataLogging.csproj in Sources */,
+				AAA2141009013031AA00007A /* ChartForm.cs in Sources */,
+				AAA2141009013031AA00007B /* ChartForm.Designer.cs in Sources */,
+				AAA2141009013031AA00007C /* DataLogging.cs in Sources */,
+				AAA2141009013031AA00007D /* Program.cs in Sources */,
+				AAA2141009013031AA00007F /* AssemblyInfo.cs in Sources */,
+				AAA2141009013031AA000080 /* Resources.Designer.cs in Sources */,
+				AAA2141009013031AA000081 /* Settings.Designer.cs in Sources */,
+				AAA2141009013031AA000083 /* 1-Receive.csproj in Sources */,
+				AAA2141009013031AA000084 /* Program.cs in Sources */,
+				AAA2141009013031AA000086 /* AssemblyInfo.cs in Sources */,
+				AAA2141009013031AA000087 /* Receive.cs in Sources */,
+				AAA2141009013031AA000089 /* 2-SendAndReceive.csproj in Sources */,
+				AAA2141009013031AA00008A /* Program.cs in Sources */,
+				AAA2141009013031AA00008C /* AssemblyInfo.cs in Sources */,
+				AAA2141009013031AA00008D /* SendAndReceive.cs in Sources */,
+				AAA2141009013031AA00008F /* 3-SendAndReceiveArguments.csproj in Sources */,
+				AAA2141009013031AA000090 /* Program.cs in Sources */,
+				AAA2141009013031AA000092 /* AssemblyInfo.cs in Sources */,
+				AAA2141009013031AA000093 /* SendAndReceiveArguments.cs in Sources */,
+				AAA2141009013031AA000095 /* 4-SendAndReceiveBinaryArguments.csproj in Sources */,
+				AAA2141009013031AA000096 /* Program.cs in Sources */,
+				AAA2141009013031AA000098 /* AssemblyInfo.cs in Sources */,
+				AAA2141009013031AA000099 /* SendAndReceiveBinaryArguments.cs in Sources */,
+				AAA2141009013031AA00009B /* 7-TemperatureControl.csproj in Sources */,
+				AAA2141009013031AA00009C /* ChartForm.cs in Sources */,
+				AAA2141009013031AA00009D /* ChartForm.Designer.cs in Sources */,
+				AAA2141009013031AA00009E /* LoggingView.cs in Sources */,
+				AAA2141009013031AA00009F /* LoggingView.Designer.cs in Sources */,
+				AAA2141009013031AA0000A0 /* Program.cs in Sources */,
+				AAA2141009013031AA0000A2 /* AssemblyInfo.cs in Sources */,
+				AAA2141009013031AA0000A3 /* Resources.Designer.cs in Sources */,
+				AAA2141009013031AA0000A4 /* Settings.Designer.cs in Sources */,
+				AAA2141009013031AA0000A5 /* TemperatureControl.cs in Sources */,
+				AAA2141009013031AA0000CB /* LPD8806.cpp in Sources */,
+				AAA2141009013031AA0000CC /* LPD8806.h in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		29D701FA19E67F1300649898 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 29D701D719E67F1300649898 /* Teensy 3.1.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PATH = "$(PATH):$(PROJECT_DIR)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKETCHBOOK_DIR = "";
+				SKETCH_EXTENSION = ino;
+			};
+			name = Debug;
+		};
+		29D701FB19E67F1300649898 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PATH = "$(PATH):$(PROJECT_DIR)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKETCHBOOK_DIR = "";
+				SKETCH_EXTENSION = ino;
+			};
+			name = Release;
+		};
+		29D701FD19E67F1300649898 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		29D701FE19E67F1300649898 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		29D7020019E67F1300649898 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		29D7020119E67F1300649898 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Release;
+		};
+		29D7020319E67F1300649898 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		29D7020419E67F1300649898 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Release;
+		};
+		29D7020619E67F1300649898 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		29D7020719E67F1300649898 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Release;
+		};
+		29D7020919E67F1300649898 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		29D7020A19E67F1300649898 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		29D7019B19E67F1300649898 /* Build configuration list for PBXProject "hippiestick" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				29D701FA19E67F1300649898 /* Debug */,
+				29D701FB19E67F1300649898 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		29D701FC19E67F1300649898 /* Build configuration list for PBXLegacyTarget "All" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				29D701FD19E67F1300649898 /* Debug */,
+				29D701FE19E67F1300649898 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		29D701FF19E67F1300649898 /* Build configuration list for PBXLegacyTarget "Build" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				29D7020019E67F1300649898 /* Debug */,
+				29D7020119E67F1300649898 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		29D7020219E67F1300649898 /* Build configuration list for PBXLegacyTarget "Serial" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				29D7020319E67F1300649898 /* Debug */,
+				29D7020419E67F1300649898 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		29D7020519E67F1300649898 /* Build configuration list for PBXLegacyTarget "Upload" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				29D7020619E67F1300649898 /* Debug */,
+				29D7020719E67F1300649898 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		29D7020819E67F1300649898 /* Build configuration list for PBXNativeTarget "Index" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				29D7020919E67F1300649898 /* Debug */,
+				29D7020A19E67F1300649898 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29D7019819E67F1300649898 /* Project object */;
+}
