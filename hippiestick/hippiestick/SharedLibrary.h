@@ -1,22 +1,3 @@
-//
-// File			LocalLibrary.h
-// Brief		Library header
-//
-// Project	 	hippiestick
-// Developed with [embedXcode](http://embedXcode.weebly.com)
-// 
-// Author		Tyler Powers
-// 				gr4yscale
-// Date			10/9/14 1:30 AM
-// Version		<#version#>
-// 
-// Copyright	© Tyler Powers, 2014
-// License		<#license#>
-//
-// See			ReadMe.txt for references
-//
-
-
 // Core library for code-sense - IDE-based
 #if defined(WIRING) // Wiring specific
 #include "Wiring.h"
@@ -41,18 +22,22 @@
 #error Platform not defined
 #endif // end IDE
 
-#ifndef hippiestick_LocalLibrary_h
-#define hippiestick_LocalLibrary_h
+#ifndef SharedLibrary_h
+#define SharedLibrary_h
 
-//
-// Brief	Blink a LED
-// Details	LED attached to pin is light on then light off
-// Total cycle duration = ms
-// Parameters:
-//      pin pin to which the LED is attached
-//      times number of times
-//      ms cycle duration in ms
-//
+const int ledCount = 208;
+
+#define ADAFRUITBLE_REQ 10
+#define ADAFRUITBLE_RDY 3
+#define ADAFRUITBLE_RST 9
+
+enum
+{
+    kSetLed, // Command to request led to be set in specific state
+};
+
+// function prototypes
+
 void blink(uint8_t pin, uint8_t times, uint16_t ms);
 
 #endif
