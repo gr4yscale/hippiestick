@@ -15,7 +15,6 @@
 		29D7051019E7684C00649898 /* ColorfulBouncyBallPhysics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29D7050E19E7684C00649898 /* ColorfulBouncyBallPhysics.cpp */; };
 		29D707C919E77B8A00649898 /* Adafruit_BLE_UART.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29D7051319E77B8800649898 /* Adafruit_BLE_UART.cpp */; };
 		29D707CA19E77B8A00649898 /* old_adafruit.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29D7051A19E77B8800649898 /* old_adafruit.cpp */; };
-		29D707CB19E77B8A00649898 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 29D7051B19E77B8800649898 /* README.md */; };
 		29D707CC19E77B8A00649898 /* aci_queue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29D7052119E77B8800649898 /* aci_queue.cpp */; };
 		29D707CD19E77B8A00649898 /* aci_setup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29D7052319E77B8800649898 /* aci_setup.cpp */; };
 		29D707CE19E77B8A00649898 /* acilib.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29D7052519E77B8800649898 /* acilib.cpp */; };
@@ -23,9 +22,7 @@
 		29D707D019E77B8A00649898 /* hal_aci_tl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29D7052F19E77B8800649898 /* hal_aci_tl.cpp */; };
 		29D707D119E77B8A00649898 /* lib_aci.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29D7053219E77B8800649898 /* lib_aci.cpp */; };
 		29D707D219E77B8A00649898 /* CmdMessenger.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29D7053B19E77B8800649898 /* CmdMessenger.cpp */; };
-		29D707D319E77B8A00649898 /* README.markdown in Sources */ = {isa = PBXBuildFile; fileRef = 29D707A619E77B8900649898 /* README.markdown */; };
 		29D707D419E77B8A00649898 /* LPD8806.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29D707B319E77B8900649898 /* LPD8806.cpp */; };
-		29D707D519E77B8A00649898 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 29D707B519E77B8900649898 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -2120,15 +2117,12 @@
 				29D7051019E7684C00649898 /* ColorfulBouncyBallPhysics.cpp in Sources */,
 				29D707D419E77B8A00649898 /* LPD8806.cpp in Sources */,
 				29D707CD19E77B8A00649898 /* aci_setup.cpp in Sources */,
-				29D707CB19E77B8A00649898 /* README.md in Sources */,
 				29D707C919E77B8A00649898 /* Adafruit_BLE_UART.cpp in Sources */,
 				29D707CA19E77B8A00649898 /* old_adafruit.cpp in Sources */,
-				29D707D519E77B8A00649898 /* README.md in Sources */,
 				29D707D119E77B8A00649898 /* lib_aci.cpp in Sources */,
 				29D707CE19E77B8A00649898 /* acilib.cpp in Sources */,
 				29D707D219E77B8A00649898 /* CmdMessenger.cpp in Sources */,
 				29D707CF19E77B8A00649898 /* dfu.cpp in Sources */,
-				29D707D319E77B8A00649898 /* README.markdown in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

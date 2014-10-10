@@ -66,6 +66,10 @@ USER_LIBS_LIST = Adafruit_nRF8001 CmdMessenger LPD8806
 #
 #SERIAL_BAUDRATE = 19200
 
+# Warning options
+
+WARNING_OPTIONS = unused-variable unused-function unused-label unused-value
+
 
 # Miscellaneous
 # ----------------------------------
