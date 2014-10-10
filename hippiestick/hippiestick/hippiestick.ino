@@ -12,6 +12,10 @@
 //#include "a_colorful_multi_bouncy_ball_physics.h"
 
 #include "ColorfulBouncyBallPhysics.h"
+#include "SimpleAnimations.h"
+
+int g_updateInterval = 1;
+int g_brightness = 1.0;
 
 aci_evt_opcode_t ble_laststatus = ACI_EVT_DISCONNECTED;
 
