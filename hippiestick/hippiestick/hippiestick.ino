@@ -16,9 +16,9 @@
 aci_evt_opcode_t ble_laststatus = ACI_EVT_DISCONNECTED;
 
 Adafruit_BLE_UART bleSerial = Adafruit_BLE_UART(ADAFRUITBLE_REQ, ADAFRUITBLE_RDY, ADAFRUITBLE_RST);
-LPD8806 strip = LPD8806(ledCount);
 CmdMessenger cmdMessenger = CmdMessenger(bleSerial, ',', ';');
 
+ColorfulBouncyBallPhysics modeBouncyBallPhysics;
 
 void attachCommandCallbacks();
 void pollBluetoothStatus(void);
@@ -27,16 +27,17 @@ void OnSetLed();
 
 void setup()
 {
-    pinMode(13, OUTPUT);
-
     Serial.begin(9600);
     while(!Serial); // Leonardo/Micro should wait for serial init
     Serial.println(F("Adafruit Bluefruit Low Energy nRF8001 Print echo demo"));
 
+    bleSerial.begin();
+
+    LPD8806 strip = LPD8806(ledCount);
     strip.begin();
+    modeBouncyBallPhysics.updateStrip(strip);
 
     Serial.println("strip begun");
-
     strip.show();
 
     Serial.println("strip should be shown");
@@ -48,16 +49,20 @@ void setup()
 
 void loop()
 {
-    blink(13, 1, 20);
-    delay(10);
+    pollBluetoothStatus();
+    modeBouncyBallPhysics.loop();
+
+//    blink(13, 1, 20);
+//    delay(10);
+
 }
+
 
 //
 
 void attachCommandCallbacks()
 {
     cmdMessenger.attach(kSetLed, OnSetLed);
-    Serial.println("attached on set led callback");
 }
 
 void pollBluetoothStatus(void)
@@ -82,6 +87,35 @@ void pollBluetoothStatus(void)
     if (ble_current_status == ACI_EVT_CONNECTED) {
         cmdMessenger.feedinSerialData();
     }
+
+
+//    // Lets see if there's any data for us!
+//    if (bleSerial.available()) {
+//      Serial.print("* "); Serial.print(bleSerial.available()); Serial.println(F(" bytes available from BTLE"));
+//    }
+//    // OK while we still have something to read, get a character and print it out
+//    while (bleSerial.available()) {
+//      char c = bleSerial.read();
+//      Serial.print(c);
+//    }
+//
+//    // Next up, see if we have any data to get from the Serial console
+//
+//    if (Serial.available()) {
+//      // Read a line from Serial
+//      Serial.setTimeout(100); // 100 millisecond timeout
+//      String s = Serial.readString();
+//
+//      // We need to convert the line to bytes, no more than 20 at this time
+//      uint8_t sendbuffer[20];
+//      s.getBytes(sendbuffer, 20);
+//      char sendbuffersize = min(20, s.length());
+//
+//      Serial.print(F("\n* Sending -> \"")); Serial.print((char *)sendbuffer); Serial.println("\"");
+//
+//      // write the data
+//      bleSerial.write(sendbuffer, sendbuffersize);
+//    }
 }
 
 // Command callbacks

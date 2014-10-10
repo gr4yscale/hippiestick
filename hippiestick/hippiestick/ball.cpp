@@ -1,4 +1,4 @@
-#include "ball.h"
+#include "Ball.h"
 
 Ball::Ball(float ceiling, int mass, float elasticity):
     ceiling(ceiling),

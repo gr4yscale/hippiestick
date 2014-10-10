@@ -1,7 +1,6 @@
 #include "ColorfulBouncyBallPhysics.h"
 
-
-static Ball balls[] = {
+Ball balls[] = {
     Ball(stripCeiling, 25, .80, 1.0),
     Ball(stripCeiling, 30, .75, 1.4),
     Ball(stripCeiling, 15, .25, 1.6),
@@ -30,7 +29,13 @@ static Ball balls[] = {
 
 const byte ballCount = sizeof(balls) / sizeof(Ball);
 
+ColorfulBouncyBallPhysics::ColorfulBouncyBallPhysics(void) {}
+
 ColorfulBouncyBallPhysics::ColorfulBouncyBallPhysics(LPD8806 s) {
+    strip = s;
+}
+
+void ColorfulBouncyBallPhysics::updateStrip(LPD8806 s) {
     strip = s;
 }
 

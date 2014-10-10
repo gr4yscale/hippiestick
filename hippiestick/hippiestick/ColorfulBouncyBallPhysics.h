@@ -1,29 +1,10 @@
-// Core library for code-sense - IDE-based
-#if defined(WIRING) // Wiring specific
-#include "Wiring.h"
-#elif defined(MAPLE_IDE) // Maple specific
-#include "WProgram.h"
-#elif defined(MPIDE) // chipKIT specific
-#include "WProgram.h"
-#elif defined(DIGISPARK) // Digispark specific
 #include "Arduino.h"
-#elif defined(ENERGIA) // LaunchPad specific
-#include "Energia.h"
-#elif defined(MICRODUINO) // Microduino specific
-#include "Arduino.h"
-#elif defined(TEENSYDUINO) // Teensy specific
-#include "Arduino.h"
-#elif defined(ARDUINO) // Arduino 1.0 and 1.5 specific
-#include "Arduino.h"
-#else // error
-#error Platform not defined
-#endif // end IDE
 
 #ifndef ColorfulBouncyBallPhysics_h
 #define ColorfulBouncyBallPhysics_h
 
 #include "LPD8806.h"
-#include "ball.h"
+#include "Ball.h"
 #include "SharedLibrary.h"
 
 const int
@@ -40,8 +21,10 @@ class ColorfulBouncyBallPhysics {
     float gravity = 6; // Earth gravity in m/s^2 = 1.622, Lunar gravity in m/s^2
 
 public:
+    ColorfulBouncyBallPhysics(void);
     ColorfulBouncyBallPhysics(LPD8806 s);
 
+    void updateStrip(LPD8806 s);
     void loop();
     void serialAddKineticEnergy();
     void renderDots();
