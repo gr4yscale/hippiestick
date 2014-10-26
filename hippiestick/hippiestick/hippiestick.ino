@@ -46,13 +46,13 @@ void setup()
     strip.begin();
 
     // sets the strip for bouncy ball physics mode; strip not avail when we declare it (needs to be global)
-//    modeBouncyBallPhysics.setStrip(strip);
-    modeSimpleAnimations.setStrip(strip);
+    modeBouncyBallPhysics.setStrip(strip);
+//    modeSimpleAnimations.setStrip(strip);
 
     // initial setup
 
-    modeSimpleAnimations.setAnimationMode(MODE_AUDIO_REACTIVE_WAVE);
-    modeSimpleAnimations.setColor(strip.Color(10,100,0));
+//    modeSimpleAnimations.setAnimationMode(MODE_AUDIO_REACTIVE_WAVE);
+//    modeSimpleAnimations.setColor(strip.Color(10,100,0));
 
     strip.show();
 
@@ -67,8 +67,11 @@ void setup()
 void loop()
 {
 
+//    pollBluetoothStatus();
 
-    modeSimpleAnimations.loop();
+//    modeSimpleAnimations.loop();
+    modeBouncyBallPhysics.loop();
+
 
 //    pollBluetoothStatus();
 

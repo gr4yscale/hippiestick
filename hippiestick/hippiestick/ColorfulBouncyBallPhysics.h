@@ -18,7 +18,7 @@ const float
 
 class ColorfulBouncyBallPhysics {
     unsigned long addedForce = 2;
-    float gravity = 6; // Earth gravity in m/s^2 = 1.622, Lunar gravity in m/s^2
+    float gravity = 12; // Earth gravity in m/s^2 = 1.622, Lunar gravity in m/s^2
 
 public:
     ColorfulBouncyBallPhysics(void);

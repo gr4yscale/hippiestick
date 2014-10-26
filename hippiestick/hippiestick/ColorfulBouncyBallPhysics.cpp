@@ -43,7 +43,12 @@ void ColorfulBouncyBallPhysics::loop() {
     static long nextStep = 0;
     long milliSeconds = millis();
 
+    double factor = map(analogRead(1), 0, 1024.0, 0, 9.0);
+    addedForce = factor;
+
+
     serialAddKineticEnergy();
+
 
     if (milliSeconds >= nextStep) {
         nextStep += updateInterval;
@@ -51,6 +56,8 @@ void ColorfulBouncyBallPhysics::loop() {
             balls[i].travel(timeFactor, gravity);
         renderDots();
     }
+
+    Serial.println(factor);
 }
 
 void ColorfulBouncyBallPhysics::serialAddKineticEnergy() {
@@ -73,9 +80,7 @@ void ColorfulBouncyBallPhysics::renderDots() {
         int index = (balls[i].height + ledSpacing / 2) / ledSpacing;
         strip.setPixelColor(index, colors[random(0,24)] | strip.getPixelColor(index));
     }
-    digitalWrite(ADAFRUITBLE_REQ, 1);
     strip.show();
-    digitalWrite(ADAFRUITBLE_REQ, 0);
     for (int i = ballCount; i-- > 0;)
         strip.setPixelColor((balls[i].height + ledSpacing / 2) / ledSpacing, 0);
 }
