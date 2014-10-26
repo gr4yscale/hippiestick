@@ -24,11 +24,8 @@ public:
     ColorfulBouncyBallPhysics(void);
     ColorfulBouncyBallPhysics(LPD8806 s);
 
-    void updateStrip(LPD8806 s);
+    void setStrip(LPD8806 s);
     void loop();
-    void serialAddKineticEnergy();
-    void renderDots();
-
 
 private:
     LPD8806 strip;
@@ -58,6 +55,9 @@ private:
         strip.Color(120, 120, 7),
         strip.Color(2, 120, 30)
     };
+
+    void serialAddKineticEnergy();
+    void renderDots();
 };
 
 #endif

@@ -35,7 +35,7 @@ ColorfulBouncyBallPhysics::ColorfulBouncyBallPhysics(LPD8806 s) {
     strip = s;
 }
 
-void ColorfulBouncyBallPhysics::updateStrip(LPD8806 s) {
+void ColorfulBouncyBallPhysics::setStrip(LPD8806 s) {
     strip = s;
 }
 
@@ -73,7 +73,9 @@ void ColorfulBouncyBallPhysics::renderDots() {
         int index = (balls[i].height + ledSpacing / 2) / ledSpacing;
         strip.setPixelColor(index, colors[random(0,24)] | strip.getPixelColor(index));
     }
+    digitalWrite(ADAFRUITBLE_REQ, 1);
     strip.show();
+    digitalWrite(ADAFRUITBLE_REQ, 0);
     for (int i = ballCount; i-- > 0;)
         strip.setPixelColor((balls[i].height + ledSpacing / 2) / ledSpacing, 0);
 }

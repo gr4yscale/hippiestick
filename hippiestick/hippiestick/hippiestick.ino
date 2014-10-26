@@ -9,13 +9,13 @@
 #include "CmdMessenger.h"
 #include "SharedLibrary.h"
 
-//#include "a_colorful_multi_bouncy_ball_physics.h"
-
 #include "ColorfulBouncyBallPhysics.h"
 #include "SimpleAnimations.h"
 
 int g_updateInterval = 1;
 int g_brightness = 1.0;
+int g_currentMode = 0;
+int g_logHeartbeatInterval = 1000;
 
 aci_evt_opcode_t ble_laststatus = ACI_EVT_DISCONNECTED;
 
@@ -23,10 +23,15 @@ Adafruit_BLE_UART bleSerial = Adafruit_BLE_UART(ADAFRUITBLE_REQ, ADAFRUITBLE_RDY
 CmdMessenger cmdMessenger = CmdMessenger(bleSerial, ',', ';');
 
 ColorfulBouncyBallPhysics modeBouncyBallPhysics;
+SimpleAnimations modeSimpleAnimations;
 
 void attachCommandCallbacks();
 void pollBluetoothStatus(void);
-void OnSetLed();
+void logHeartbeat();
+void onUnknownCommand();
+void onSetMode();
+void onSetModeParamSimpleAnimationsColor();
+void onSetModeParamSimpleAnimationsCycles();
 
 
 void setup()
@@ -39,34 +44,68 @@ void setup()
 
     LPD8806 strip = LPD8806(ledCount);
     strip.begin();
-    modeBouncyBallPhysics.updateStrip(strip);
-
     Serial.println("strip begun");
+
+    // sets the strip for bouncy ball physics mode; strip not avail when we declare it (needs to be global)
+//    modeBouncyBallPhysics.setStrip(strip);
+    modeSimpleAnimations.setStrip(strip);
+
+    // initial setup
+
+    modeSimpleAnimations.setAnimationMode(MODE_SCANNER);
+    modeSimpleAnimations.setColor(strip.Color(20,100,255));
+
     strip.show();
 
     Serial.println("strip should be shown");
 
     // Adds newline to every command
-    cmdMessenger.printLfCr();
-    attachCommandCallbacks();
+//    cmdMessenger.printLfCr();
+//    attachCommandCallbacks();
+
+
 }
 
 void loop()
 {
-    pollBluetoothStatus();
-    modeBouncyBallPhysics.loop();
 
-//    blink(13, 1, 20);
-//    delay(10);
+    modeSimpleAnimations.loop();
+    delay(200);
 
-}
+//    pollBluetoothStatus();
+
+    // wrap looping functions in a wait using CMD_SET_UPDATE_INTERVAL
 
 
+//    switch (g_currentMode) {
+//        case MODE_COLORFUL_MULTI_BOUNCY_BALL_PHYSICS:
+//            modeBouncyBallPhysics.loop();
+//            break;
+//        case MODE_COLOR_WIPE:
+//        case MODE_DITHER: // scanner
+//        case MODE_WAVE:
+//        case MODE_WAVE2:
+//        case MODE_RAINBOW_CYCLE:
+//        case MODE_RANDOM_COLORS:
+//            Serial.println("calling simpleAnimations loop");
+//            modeSimpleAnimations.loop();
+//            break;
 //
+//        default:
+//            modeBouncyBallPhysics.loop();
+//            break;
+//    }
+
+    // need a heartbeat
+
+    logHeartbeat();
+}
 
 void attachCommandCallbacks()
 {
-    cmdMessenger.attach(kSetLed, OnSetLed);
+    cmdMessenger.attach(CMD_SET_MODE, onSetMode);
+    cmdMessenger.attach(CMD_SET_MODE_PARAM_SIMPLE_ANIMATIONS_COLOR, onSetModeParamSimpleAnimationsColor);
+    cmdMessenger.attach(CMD_SET_MODE_PARAM_SIMPLE_ANIMATIONS_CYCLES, onSetModeParamSimpleAnimationsCycles);
 }
 
 void pollBluetoothStatus(void)
@@ -91,46 +130,54 @@ void pollBluetoothStatus(void)
     if (ble_current_status == ACI_EVT_CONNECTED) {
         cmdMessenger.feedinSerialData();
     }
-
-
-//    // Lets see if there's any data for us!
-//    if (bleSerial.available()) {
-//      Serial.print("* "); Serial.print(bleSerial.available()); Serial.println(F(" bytes available from BTLE"));
-//    }
-//    // OK while we still have something to read, get a character and print it out
-//    while (bleSerial.available()) {
-//      char c = bleSerial.read();
-//      Serial.print(c);
-//    }
-//
-//    // Next up, see if we have any data to get from the Serial console
-//
-//    if (Serial.available()) {
-//      // Read a line from Serial
-//      Serial.setTimeout(100); // 100 millisecond timeout
-//      String s = Serial.readString();
-//
-//      // We need to convert the line to bytes, no more than 20 at this time
-//      uint8_t sendbuffer[20];
-//      s.getBytes(sendbuffer, 20);
-//      char sendbuffersize = min(20, s.length());
-//
-//      Serial.print(F("\n* Sending -> \"")); Serial.print((char *)sendbuffer); Serial.println("\"");
-//
-//      // write the data
-//      bleSerial.write(sendbuffer, sendbuffersize);
-//    }
 }
 
-// Command callbacks
-
-void OnSetLed()
+void logHeartbeat()
 {
-//    addedForce = cmdMessenger.readInt16Arg();
-//    gravity = cmdMessenger.readFloatArg();
+    static long nextStep = 0;
+    long milliSeconds = millis();
 
-    // Set led
-    Serial.println("changing gravity:");
-//    Serial.println(gravity, 4);
-    //  digitalWrite(kBlinkLed, ledState?HIGH:LOW);
+    if (milliSeconds >= nextStep) {
+        nextStep += g_logHeartbeatInterval;
+        Serial.println("I'm alive!");
+    }
+}
+
+// Command Callbacks
+
+
+void onUnknownCommand()
+{
+    Serial.println("received unknown command");
+}
+
+void onSetMode()
+{
+    Serial.println("Going to set the mode now");
+    animation_mode_t mode = (animation_mode_t)cmdMessenger.readInt16Arg();
+
+    if (g_currentMode != mode) {
+        Serial.println("changing mode: ");
+        Serial.print(mode);
+
+//      blank the strip
+//      for(uint8_t i=0; i<strip.numPixels(); i++) strip.setPixelColor(i, 0);
+//      strip.show();
+
+        modeSimpleAnimations.setAnimationMode(mode);
+
+        g_currentMode = mode;
+    }
+}
+
+void onSetModeParamSimpleAnimationsColor()
+{
+    // update an instance variable on the to-be0converted-to-a-class SimpleAnimations class library
+
+}
+
+void onSetModeParamSimpleAnimationsCycles()
+{
+
+    
 }

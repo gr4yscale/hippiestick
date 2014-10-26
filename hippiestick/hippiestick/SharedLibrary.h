@@ -1,26 +1,4 @@
-// Core library for code-sense - IDE-based
-#if defined(WIRING) // Wiring specific
-#include "Wiring.h"
-#elif defined(MAPLE_IDE) // Maple specific
-#include "WProgram.h"
-#elif defined(ROBOTIS)
-#include "libpandora_types.h"
-#include "pandora.h"
-#elif defined(MPIDE) // chipKIT specific
-#include "WProgram.h"
-#elif defined(DIGISPARK) // Digispark specific
 #include "Arduino.h"
-#elif defined(ENERGIA) // LaunchPad specific
-#include "Energia.h"
-#elif defined(MICRODUINO) // Microduino specific
-#include "Arduino.h"
-#elif defined(TEENSYDUINO) // Teensy specific
-#include "Arduino.h"
-#elif defined(ARDUINO) // Arduino 1.0 and 1.5 specific
-#include "Arduino.h"
-#else // error
-#error Platform not defined
-#endif // end IDE
 
 #ifndef SharedLibrary_h
 #define SharedLibrary_h
@@ -31,13 +9,27 @@ const int ledCount = 208;
 #define ADAFRUITBLE_RDY 3
 #define ADAFRUITBLE_RST 9
 
-enum
+typedef enum
 {
-    kSetLed, // Command to request led to be set in specific state
-};
+    CMD_SET_MODE                    = 1,
+    CMD_SET_UPDATE_INTERVAL         = 2,
+    CMD_SET_BRIGHTNESS              = 3,
+    CMD_SET_MODE_PARAM_SIMPLE_ANIMATIONS_COLOR = 4,
+    CMD_SET_MODE_PARAM_SIMPLE_ANIMATIONS_CYCLES = 5
+} cmd_t;
 
-// function prototypes
-
-void blink(uint8_t pin, uint8_t times, uint16_t ms);
+typedef enum
+{
+    MODE_COLORFUL_MULTI_BOUNCY_BALL_PHYSICS         = 0,
+    MODE_COLOR_WIPE                                 = 1,
+    MODE_DITHER                                     = 2,
+    MODE_SCANNER                                    = 3,
+    MODE_WAVE                                       = 4,
+    MODE_WAVE2                                      = 5,
+    MODE_RAINBOW_CYCLE                              = 6,
+    MODE_UNIFORM_BREATHE                            = 7,
+    MODE_SEQUENCED_BREATHE                          = 8,
+    MODE_RANDOM_COLORS                              = 9
+} animation_mode_t;
 
 #endif

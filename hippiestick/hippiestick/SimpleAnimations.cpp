@@ -1,8 +1,4 @@
 #include "SimpleAnimations.h"
-#include "LPD8806.h"
-
-unsigned long timeStamp;
-unsigned long stopTime;
 
 uint8_t LED_Breathe_Table[]  = {   80,  87,  95, 103, 112, 121, 131, 141, 151, 161, 172, 182, 192, 202, 211, 220,
     228, 236, 242, 247, 251, 254, 255, 255, 254, 251, 247, 242, 236, 228, 220, 211, 202, 192, 182, 172, 161, 151,
@@ -15,33 +11,74 @@ uint8_t LED_Breathe_Table[]  = {   80,  87,  95, 103, 112, 121, 131, 141, 151, 1
 #define BREATHE_UPDATE    (BREATHE_CYCLE / BREATHE_TABLE_SIZE)
 #define PI 3.14159265
 
-// function prototypes, do not remove these!
-void colorWipe(LPD8806 &strip, uint32_t c);
-void dither(LPD8806 &strip, uint32_t c);
-void scanner(LPD8806 &strip, uint8_t r, uint8_t g, uint8_t b);
-void wave(LPD8806 &strip, uint32_t c, int cycles);
-void wave2(LPD8806 &strip, uint32_t c, int cycles);
-void rainbowCycle(LPD8806 &strip);
-void uniformBreathe(LPD8806 &strip, uint8_t* breatheTable, uint8_t breatheTableSize, uint16_t updatePeriod, uint16_t r, uint16_t g, uint16_t b);
-void sequencedBreathe(LPD8806 &strip, uint8_t* breatheTable, uint8_t breatheTableSize, uint16_t updatePeriod, uint16_t r, uint16_t g, uint16_t b);
-uint32_t Wheel(LPD8806 &strip, uint16_t WheelPos);
+SimpleAnimations::SimpleAnimations(void) {}
 
+void SimpleAnimations::setStrip(LPD8806 s)
+{
+    strip = s;
+}
+
+void SimpleAnimations::setAnimationMode(animation_mode_t am)
+{
+    animationMode = am;
+}
+
+void SimpleAnimations::setColor(uint32_t c)
+{
+    color = c;
+}
+
+void SimpleAnimations::setCycles(int cyc)
+{
+    cycles = cyc;
+}
+
+void SimpleAnimations::loop()
+{
+    switch (animationMode) {
+        case MODE_COLOR_WIPE:
+            colorWipe(color);
+            break;
+        case MODE_DITHER:
+            dither(color);
+            break;              // scanner
+        case MODE_WAVE:
+            wave(color, cycles);
+            break;
+        case MODE_WAVE2:
+            wave2(color, cycles);
+            break;
+        case MODE_RAINBOW_CYCLE:
+            rainbowCycle();
+            break;              // uniform breathe, sequenced breathe
+        case MODE_RANDOM_COLORS:
+            randomColors();
+            break;
+        default:
+            randomColors();
+            break;
+    }
+    Serial.println("looping");
+
+}
 
 // fill the dots one after the other with said color
 
-void colorWipe(LPD8806 &strip, uint32_t c)
+void SimpleAnimations::colorWipe(uint32_t c)
 {
+    Serial.println("i should set some colorz");
     int i;
     for (i=0; i < strip.numPixels(); i++) {
         strip.setPixelColor(i, c);
         strip.show();
+        Serial.println("i just set some colorz");
     }
 }
 
 // An "ordered dither" fills every pixel in a sequence that looks
 // sparkly and almost random, but actually follows a specific order.
 
-void dither(LPD8806 &strip, uint32_t c)
+void SimpleAnimations::dither(uint32_t c)
 {
     // Determine highest bit needed to represent pixel index
     int hiBit = 0;
@@ -60,14 +97,16 @@ void dither(LPD8806 &strip, uint32_t c)
             if(i & bit) reverse |= 1;
         }
         strip.setPixelColor(reverse, c);
+        digitalWrite(ADAFRUITBLE_REQ, 1);
         strip.show();
+        digitalWrite(ADAFRUITBLE_REQ, 0);
     }
 }
 
 
 // "Larson scanner" = Cylon/KITT bouncing light effect
 
-void scanner(LPD8806 &strip, uint8_t r, uint8_t g, uint8_t b)
+void SimpleAnimations::scanner(uint8_t r, uint8_t g, uint8_t b)
 {
     int i, j, pos, dir;
 
@@ -88,8 +127,9 @@ void scanner(LPD8806 &strip, uint8_t r, uint8_t g, uint8_t b)
         strip.setPixelColor(pos + 3, strip.Color(r, g, b));
         strip.setPixelColor(pos + 4, strip.Color(r, g, b));
 
-
+        digitalWrite(ADAFRUITBLE_REQ, 1);
         strip.show();
+        digitalWrite(ADAFRUITBLE_REQ, 0);
 
         // If we wanted to be sneaky we could erase just the tail end
         // pixel, but it's much easier just to erase the whole thing
@@ -111,7 +151,7 @@ void scanner(LPD8806 &strip, uint8_t r, uint8_t g, uint8_t b)
 
 // Sine wave effect
 
-void wave(LPD8806 &strip, uint32_t c, int cycles)
+void SimpleAnimations::wave(uint32_t c, int cycles)
 {
     float y;
     byte  r, g, b, r2, g2, b2;
@@ -142,15 +182,16 @@ void wave(LPD8806 &strip, uint32_t c, int cycles)
             }
             strip.setPixelColor(i, r2, g2, b2);
         }
+        digitalWrite(ADAFRUITBLE_REQ, 1);
         strip.show();
-
-
+        digitalWrite(ADAFRUITBLE_REQ, 0);
     }
 }
 
+
 // Sine wave effect
 
-void wave2(LPD8806 &strip, uint32_t c, int cycles)
+void SimpleAnimations::wave2(uint32_t c, int cycles)
 {
     float y;
     byte  r, g, b, r2, g2, b2;
@@ -178,14 +219,16 @@ void wave2(LPD8806 &strip, uint32_t c, int cycles)
             }
             strip.setPixelColor(i, r2, g2, b2);
         }
+        digitalWrite(ADAFRUITBLE_REQ, 1);
         strip.show();
+        digitalWrite(ADAFRUITBLE_REQ, 0);
     }
 }
 
 
 // Cycle through the color wheel, equally spaced along strip
 
-void rainbowCycle(LPD8806 &strip)
+void SimpleAnimations::rainbowCycle()
 {
     uint16_t i, j;
 
@@ -195,14 +238,16 @@ void rainbowCycle(LPD8806 &strip)
             // wheel (thats the i / strip.numPixels() part)
             // Then add in j which makes the colors go around per pixel
             // the % 384 is to make the wheel cycle around
-            strip.setPixelColor(i, Wheel(strip, ((i * 384 / strip.numPixels()) + j) % 384));
+            strip.setPixelColor(i, Wheel(((i * 384 / strip.numPixels()) + j) % 384));
         }
+        digitalWrite(ADAFRUITBLE_REQ, 1);
         strip.show();   // write all the pixels out
+        digitalWrite(ADAFRUITBLE_REQ, 0);
     }
 }
 
 
-void uniformBreathe(LPD8806 &strip, uint8_t* breatheTable, uint8_t breatheTableSize, uint16_t updatePeriod, uint16_t r, uint16_t g, uint16_t b)
+void SimpleAnimations::uniformBreathe(uint8_t* breatheTable, uint8_t breatheTableSize, uint16_t updatePeriod, uint16_t r, uint16_t g, uint16_t b)
 {
     int i;
     uint8_t breatheIndex = 0;
@@ -217,12 +262,14 @@ void uniformBreathe(LPD8806 &strip, uint8_t* breatheTable, uint8_t breatheTableS
             breatheBlu = (b * breatheTable[breatheIndex]) / 256;
             strip.setPixelColor(i, breatheRed, breatheGrn, breatheBlu);
         }
+        digitalWrite(ADAFRUITBLE_REQ, 1);
         strip.show();   // write all the pixels out
+        digitalWrite(ADAFRUITBLE_REQ, 0);
         delay(updatePeriod);
     }
 }
 
-void sequencedBreathe(LPD8806 &strip, uint8_t* breatheTable, uint8_t breatheTableSize, uint16_t updatePeriod, uint16_t r, uint16_t g, uint16_t b)
+void SimpleAnimations::sequencedBreathe(uint8_t* breatheTable, uint8_t breatheTableSize, uint16_t updatePeriod, uint16_t r, uint16_t g, uint16_t b)
 {
     int i;
     uint8_t breatheIndex = 0;
@@ -239,20 +286,44 @@ void sequencedBreathe(LPD8806 &strip, uint8_t* breatheTable, uint8_t breatheTabl
             breatheBlu = (b * breatheTable[sequenceIndex]) / 256;
             strip.setPixelColor(i, breatheRed, breatheGrn, breatheBlu);
         }
+        digitalWrite(ADAFRUITBLE_REQ, 1);
         strip.show();
+        digitalWrite(ADAFRUITBLE_REQ, 0);
         delay(updatePeriod);
     }
 }
 
 
+// Random Colors, one at a time
+
+void SimpleAnimations::randomColors()
+{
+    offsetR = random(0,127);
+    offsetG = random(0,127);
+    offsetB = random(0,127);
+    randPixel = random(0, strip.numPixels() - 1);
+    randR = random(0,127) - offsetR;
+    randG = random(0,127) - offsetG;
+    randB = random(0,127) - offsetB;
+
+    int i = randPixel;
+    byte r = abs(0 - constrain(randR, 0, 127));
+    byte g = abs(0 - constrain(randG, 0, 127));
+    byte b = abs(0 - constrain(randB, 0, 127));
+
+    strip.setPixelColor(i,r,g,b);
+    digitalWrite(ADAFRUITBLE_REQ, 1);
+    strip.show();
+    digitalWrite(ADAFRUITBLE_REQ, 0);
+}
+
 
 // private
-
 
 //Input a value 0 to 384 to get a color value.
 //The colours are a transition r - g - b - back to r
 
-uint32_t Wheel(LPD8806 &strip, uint16_t WheelPos)
+uint32_t SimpleAnimations::Wheel(uint16_t WheelPos)
 {
     byte r, g, b;
     switch(WheelPos / 128)
