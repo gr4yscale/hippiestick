@@ -233,38 +233,7 @@ void SimpleAnimations::wave2(uint32_t c, int cycles)
 
 void SimpleAnimations::rainbowCycle()
 {
-    uint16_t i, j;
 
-    for (j=0; j < 384 * 5; j++) {     // 5 cycles of all 384 colors in the wheel
-        for (i=0; i < strip.numPixels(); i++) {
-            // tricky math! we use each pixel as a fraction of the full 384-color
-            // wheel (thats the i / strip.numPixels() part)
-            // Then add in j which makes the colors go around per pixel
-            // the % 384 is to make the wheel cycle around
-            strip.setPixelColor(i, Wheel(((i * 384 / strip.numPixels()) + j) % 384));
-        }
-
-
-        unsigned int micLevel = microPhoneLevel();
-
-//        double factor = map(analogRead(1), 0, 1024.0, 0, 2.0);
-
-
-        double factor = analogRead(1) * 2.6 / 1024;
-
-        Serial.println(factor);
-
-
-        unsigned int numberOfLights = map(micLevel, 0, 1024, 0, ledCount) * factor;
-
-        for (int ledPosition=numberOfLights; ledPosition < ledCount; ledPosition++) {
-            strip.setPixelColor(ledPosition, strip.Color(0, 0, 0));
-        }
-
-//      Serial.println(numberOfLights);
-
-        strip.show();   // write all the pixels out
-    }
 }
 
 
@@ -385,10 +354,30 @@ unsigned int SimpleAnimations::microPhoneLevel() {
 
 void SimpleAnimations::audioReactiveRainbowCycle() {
 
-    rainbowCycle();
-//    cycles = analogRead(1);
-//    int sineCycles = map(cycles, 0, 1024, 0, 30);
-//
+    unsigned int micLevel = microPhoneLevel();
+
+    //        double factor = map(analogRead(1), 0, 1024.0, 0, 2.0);
+
+
+    double factor = analogRead(1) * 5.0 / 1024;
+
+    Serial.println(factor);
+
+    uint16_t i, j;
+
+    for (j=0; j < 384 * 5; j++) {     // 5 cycles of all 384 colors in the wheel
+        for (i=0; i < strip.numPixels(); i++) {
+            // tricky math! we use each pixel as a fraction of the full 384-color
+            // wheel (thats the i / strip.numPixels() part)
+            // Then add in j which makes the colors go around per pixel
+            // the % 384 is to make the wheel cycle around
+            strip.setPixelColor(i, Wheel(((i * 384 / strip.numPixels()) + j) % 384));
+        }
+
+        Serial.println(factor);
+        strip.show();   // write all the pixels out
+    }
+
 }
 
 // private
