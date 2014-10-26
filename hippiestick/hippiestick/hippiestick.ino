@@ -52,8 +52,8 @@ void setup()
 
     // initial setup
 
-    modeSimpleAnimations.setAnimationMode(MODE_SCANNER);
-    modeSimpleAnimations.setColor(strip.Color(20,100,255));
+    modeSimpleAnimations.setAnimationMode(MODE_MICROPHONE_LEVEL);
+    modeSimpleAnimations.setColor(strip.Color(255,20,255));
 
     strip.show();
 
@@ -69,8 +69,8 @@ void setup()
 void loop()
 {
 
+
     modeSimpleAnimations.loop();
-    delay(200);
 
 //    pollBluetoothStatus();
 
