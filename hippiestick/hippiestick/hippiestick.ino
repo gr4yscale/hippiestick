@@ -52,8 +52,8 @@ void setup()
 
     // initial setup
 
-    modeSimpleAnimations.setAnimationMode(MODE_MICROPHONE_LEVEL);
-    modeSimpleAnimations.setColor(strip.Color(255,20,255));
+    modeSimpleAnimations.setAnimationMode(MODE_WAVE2);
+    modeSimpleAnimations.setColor(strip.Color(25,20,40));
 
     strip.show();
 

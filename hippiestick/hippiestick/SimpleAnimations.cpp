@@ -61,7 +61,6 @@ void SimpleAnimations::loop()
             randomColors();
             break;
     }
-    Serial.println("looping");
 
 }
 
@@ -206,6 +205,11 @@ void SimpleAnimations::wave2(uint32_t c, int cycles)
 
     for(int x=0; x<(strip.numPixels()*5); x++) {
         for(int i=0; i<strip.numPixels(); i++) {
+
+            cycles = analogRead(1);
+            cycles = map(cycles, 0, 1024, 0, 20);
+            Serial.println(cycles);
+
             y = sin(PI * (float)cycles * (float)(x + i) / (float)strip.numPixels());
             if(y >= 0.0) {
                 // Peaks of sine wave are white
@@ -222,9 +226,7 @@ void SimpleAnimations::wave2(uint32_t c, int cycles)
             }
             strip.setPixelColor(i, r2, g2, b2);
         }
-        digitalWrite(ADAFRUITBLE_REQ, 1);
         strip.show();
-        digitalWrite(ADAFRUITBLE_REQ, 0);
     }
 }
 
