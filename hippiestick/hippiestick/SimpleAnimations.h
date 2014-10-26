@@ -46,7 +46,8 @@ private:
     void uniformBreathe(uint8_t* breatheTable, uint8_t breatheTableSize, uint16_t updatePeriod, uint16_t r, uint16_t g, uint16_t b);
     void sequencedBreathe(uint8_t* breatheTable, uint8_t breatheTableSize, uint16_t updatePeriod, uint16_t r, uint16_t g, uint16_t b);
     void randomColors();
-    void microPhoneLevel();
+    unsigned int microPhoneLevel();
+    void audioReactiveRainbowCycle();
 
     uint32_t Wheel(uint16_t WheelPos);
 };

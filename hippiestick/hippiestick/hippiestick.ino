@@ -44,7 +44,6 @@ void setup()
 
     LPD8806 strip = LPD8806(ledCount);
     strip.begin();
-    Serial.println("strip begun");
 
     // sets the strip for bouncy ball physics mode; strip not avail when we declare it (needs to be global)
 //    modeBouncyBallPhysics.setStrip(strip);
@@ -52,12 +51,11 @@ void setup()
 
     // initial setup
 
-    modeSimpleAnimations.setAnimationMode(MODE_WAVE2);
-    modeSimpleAnimations.setColor(strip.Color(25,20,40));
+    modeSimpleAnimations.setAnimationMode(MODE_AUDIO_REACTIVE_WAVE);
+    modeSimpleAnimations.setColor(strip.Color(10,100,0));
 
     strip.show();
 
-    Serial.println("strip should be shown");
 
     // Adds newline to every command
 //    cmdMessenger.printLfCr();
@@ -98,7 +96,7 @@ void loop()
 
     // need a heartbeat
 
-    logHeartbeat();
+//    logHeartbeat();
 }
 
 void attachCommandCallbacks()

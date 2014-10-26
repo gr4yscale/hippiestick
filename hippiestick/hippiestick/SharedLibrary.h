@@ -30,7 +30,8 @@ typedef enum
     MODE_UNIFORM_BREATHE                            = 7,
     MODE_SEQUENCED_BREATHE                          = 8,
     MODE_RANDOM_COLORS                              = 9,
-    MODE_MICROPHONE_LEVEL                           = 10
+    MODE_MICROPHONE_LEVEL                           = 10,
+    MODE_AUDIO_REACTIVE_WAVE                        = 11
 } animation_mode_t;
 
 #endif

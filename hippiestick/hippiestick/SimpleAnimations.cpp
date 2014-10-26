@@ -46,6 +46,9 @@ void SimpleAnimations::loop()
             wave(color, cycles);
             break;
         case MODE_WAVE2:
+            cycles = analogRead(1);
+            cycles = map(cycles, 0, 1024, 0, 20);
+            Serial.println(cycles);
             wave2(color, cycles);
             break;
         case MODE_RAINBOW_CYCLE:
@@ -57,6 +60,8 @@ void SimpleAnimations::loop()
         case MODE_MICROPHONE_LEVEL:
             microPhoneLevel();
             break;
+        case MODE_AUDIO_REACTIVE_WAVE:
+            audioReactiveRainbowCycle();
         default:
             randomColors();
             break;
@@ -203,31 +208,24 @@ void SimpleAnimations::wave2(uint32_t c, int cycles)
     r = (c >>  8) & 0x7f;
     b =  c        & 0x7f;
 
-    for(int x=0; x<(strip.numPixels()*5); x++) {
-        for(int i=0; i<strip.numPixels(); i++) {
-
-            cycles = analogRead(1);
-            cycles = map(cycles, 0, 1024, 0, 20);
-            Serial.println(cycles);
-
-            y = sin(PI * (float)cycles * (float)(x + i) / (float)strip.numPixels());
-            if(y >= 0.0) {
-                // Peaks of sine wave are white
-                y  = 1.0 - y; // Translate Y to 0.0 (top) to 1.0 (center)
-                r2 = 0 - (byte)((float)(0 - r) * y);
-                g2 = 0 - (byte)((float)(0 - g) * y);
-                b2 = 127 - (byte)((float)(127 - b) * y);
-            } else {
-                // Troughs of sine wave are black
-                y += 1.0; // Translate Y to 0.0 (bottom) to 1.0 (center)
-                r2 = 50 - (byte)((float)(50 - r) * y);
-                g2 = 127 - (byte)((float)(127 - g) * y);
-                b2 = (byte)((float)b * y);
-            }
-            strip.setPixelColor(i, r2, g2, b2);
+    for(int i=0; i<strip.numPixels(); i++) {
+        y = sin(PI * (float)cycles * 6.0 / (float)strip.numPixels());
+        if(y >= 0.0) {
+            // Peaks of sine wave are white
+            y  = 1.0 - y; // Translate Y to 0.0 (top) to 1.0 (center)
+            r2 = 0 - (byte)((float)(0 - r) * y);
+            g2 = 0 - (byte)((float)(0 - g) * y);
+            b2 = 127 - (byte)((float)(127 - b) * y);
+        } else {
+            // Troughs of sine wave are black
+            y += 1.0; // Translate Y to 0.0 (bottom) to 1.0 (center)
+            r2 = 50 - (byte)((float)(50 - r) * y);
+            g2 = 127 - (byte)((float)(127 - g) * y);
+            b2 = (byte)((float)b * y);
         }
-        strip.show();
+        strip.setPixelColor(i, r2, g2, b2);
     }
+    strip.show();
 }
 
 
@@ -245,9 +243,27 @@ void SimpleAnimations::rainbowCycle()
             // the % 384 is to make the wheel cycle around
             strip.setPixelColor(i, Wheel(((i * 384 / strip.numPixels()) + j) % 384));
         }
-        digitalWrite(ADAFRUITBLE_REQ, 1);
+
+
+        unsigned int micLevel = microPhoneLevel();
+
+//        double factor = map(analogRead(1), 0, 1024.0, 0, 2.0);
+
+
+        double factor = analogRead(1) * 2.6 / 1024;
+
+        Serial.println(factor);
+
+
+        unsigned int numberOfLights = map(micLevel, 0, 1024, 0, ledCount) * factor;
+
+        for (int ledPosition=numberOfLights; ledPosition < ledCount; ledPosition++) {
+            strip.setPixelColor(ledPosition, strip.Color(0, 0, 0));
+        }
+
+//      Serial.println(numberOfLights);
+
         strip.show();   // write all the pixels out
-        digitalWrite(ADAFRUITBLE_REQ, 0);
     }
 }
 
@@ -322,7 +338,7 @@ void SimpleAnimations::randomColors()
     digitalWrite(ADAFRUITBLE_REQ, 0);
 }
 
-void SimpleAnimations::microPhoneLevel() {
+unsigned int SimpleAnimations::microPhoneLevel() {
 
     //samplerate interesting to change
 
@@ -349,25 +365,30 @@ void SimpleAnimations::microPhoneLevel() {
         }
     }
     peakToPeak = signalMax - signalMin;  // max - min = peak-peak amplitude
+    return peakToPeak;
 
-//    double volts = (peakToPeak * 3.3) / 1024;  // convert to volts
+//    for (int ledPosition=0; ledPosition < strip.numPixels(); ledPosition++) {
+//        strip.setPixelColor(ledPosition, strip.Color(0, 0, 0));
+//    }
+//    strip.show();
+//
+//    for (int ledPosition=0; ledPosition < numberOfLights; ledPosition++) {
+//        strip.setPixelColor(ledPosition, color);
+//    }
+//    strip.show();
 
-    Serial.println(peakToPeak);
+}
 
-    unsigned int numberOfLights = map(peakToPeak, 0, 1024, 0, ledCount) * 1.4;
 
-//    Serial.println(numberOfLights);
 
-    for (int ledPosition=0; ledPosition < strip.numPixels(); ledPosition++) {
-        strip.setPixelColor(ledPosition, strip.Color(0, 0, 0));
-    }
-    strip.show();
 
-    for (int ledPosition=0; ledPosition < numberOfLights; ledPosition++) {
-        strip.setPixelColor(ledPosition, color);
-    }
-    strip.show();
 
+void SimpleAnimations::audioReactiveRainbowCycle() {
+
+    rainbowCycle();
+//    cycles = analogRead(1);
+//    int sineCycles = map(cycles, 0, 1024, 0, 30);
+//
 }
 
 // private
