@@ -28,10 +28,26 @@ void SimpleAnimations::setColor(uint32_t c)
     color = c;
 }
 
-void SimpleAnimations::setCycles(int cyc)
+void SimpleAnimations::setParam1(int p1)
 {
-    cycles = cyc;
+    param1 = p1;
 }
+
+void SimpleAnimations::setParam2(int p2)
+{
+    param2 = p2;
+}
+
+void SimpleAnimations::setParam3(int p3)
+{
+    param3 = p3;
+}
+
+void SimpleAnimations::setWheelPosition(int wheelPos)
+{
+    wheelPosition = wheelPos;
+}
+
 
 void SimpleAnimations::loop()
 {
@@ -46,9 +62,6 @@ void SimpleAnimations::loop()
             wave(color, cycles);
             break;
         case MODE_WAVE2:
-            cycles = analogRead(1);
-            cycles = map(cycles, 0, 1024, 0, 20);
-            Serial.println(cycles);
             wave2(color, cycles);
             break;
         case MODE_RAINBOW_CYCLE:
@@ -58,10 +71,8 @@ void SimpleAnimations::loop()
             randomColors();
             break;
         case MODE_MICROPHONE_LEVEL:
-            microPhoneLevel();
+            amplitudeMeter();
             break;
-        case MODE_AUDIO_REACTIVE_WAVE:
-            audioReactiveRainbowCycle();
         default:
             randomColors();
             break;
@@ -318,7 +329,7 @@ unsigned int SimpleAnimations::microPhoneLevel() {
     unsigned int signalMin = 1024;
 
     // collect data for 50 mS
-    while (millis() - startMillis < sampleWindow)
+    while (millis() - startMillis < param2)
     {
         sample = analogRead(0);
         if (sample < 1024)  // toss out spurious readings
@@ -337,12 +348,32 @@ unsigned int SimpleAnimations::microPhoneLevel() {
     return peakToPeak;
 }
 
-void SimpleAnimations::audioReactiveRainbowCycle() {
+void SimpleAnimations::amplitudeMeter() {
 
     // get changes here from another branch
 
     unsigned int micLevel = microPhoneLevel();
-    double factor = analogRead(1) * 5.0 / 1024;
+
+    double factor = param3 * 2.5 / 1024;
+
+    unsigned int numberOfLights = map(micLevel, 0, 1024, 0, ledCount) * factor;
+
+    //    Serial.println(numberOfLights);
+
+    // clear all LEDs first (should be able to blank out end of strip without calling show() twice
+
+    for (int ledPosition=0; ledPosition < strip.numPixels(); ledPosition++) {
+        strip.setPixelColor(ledPosition, 0);
+    }
+    strip.show();
+
+    wheelPosition = (map(param1, 0, 1024, 0, 384));
+    color = Wheel(wheelPosition);
+
+    for (int ledPosition=0; ledPosition < numberOfLights; ledPosition++) {
+        strip.setPixelColor(ledPosition, color);
+    }
+    strip.show();
 
     Serial.println(factor);
 }

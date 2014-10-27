@@ -25,15 +25,26 @@ public:
     void setStrip(LPD8806 s);
     void setAnimationMode(animation_mode_t am);
     void setColor(uint32_t c);
-    void setCycles(int cyc);
+    void setParam1(int p1);
+    void setParam2(int p2);
+    void setParam3(int p3);
+    void setWheelPosition(int wheelPos);
+
     void loop();
 
 private:
     LPD8806 strip;
     animation_mode_t animationMode;
     uint32_t color;
-    int cycles;
 
+    int cycles = 20;
+    int wheelPosition;
+
+    int param1 = 0;
+    int param2 = 0;
+    int param3 = 0;
+
+    // amplitude meter
     const int sampleWindow = 50;
     unsigned int sample;
 
@@ -47,8 +58,9 @@ private:
     void sequencedBreathe(uint8_t* breatheTable, uint8_t breatheTableSize, uint16_t updatePeriod, uint16_t r, uint16_t g, uint16_t b);
     void randomColors();
     unsigned int microPhoneLevel();
-    void audioReactiveRainbowCycle();
+    void amplitudeMeter();
 
+    // helper methods
     uint32_t Wheel(uint16_t WheelPos);
 };
 

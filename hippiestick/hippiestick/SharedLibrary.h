@@ -3,7 +3,7 @@
 #ifndef SharedLibrary_h
 #define SharedLibrary_h
 
-const int ledCount = 208;
+const int ledCount = 102;
 
 #define ADAFRUITBLE_REQ 10
 #define ADAFRUITBLE_RDY 3
@@ -30,8 +30,7 @@ typedef enum
     MODE_UNIFORM_BREATHE                            = 7,
     MODE_SEQUENCED_BREATHE                          = 8,
     MODE_RANDOM_COLORS                              = 9,
-    MODE_MICROPHONE_LEVEL                           = 10,
-    MODE_AUDIO_REACTIVE_WAVE                        = 11
+    MODE_MICROPHONE_LEVEL                           = 10
 } animation_mode_t;
 
 #endif

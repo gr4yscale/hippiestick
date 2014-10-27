@@ -40,8 +40,7 @@ void logHeartbeat();
 void logInputs();
 void onUnknownCommand();
 void onSetMode();
-void onSetModeParamSimpleAnimationsColor();
-void onSetModeParamSimpleAnimationsCycles();
+void updateSimpleAnimationsParams();
 
 
 void setup()
@@ -55,14 +54,13 @@ void setup()
     LPD8806 strip = LPD8806(ledCount);
     strip.begin();
 
-    // sets the strip for bouncy ball physics mode; strip not avail when we declare it (needs to be global)
-    modeBouncyBallPhysics.setStrip(strip);
-//    modeSimpleAnimations.setStrip(strip);
+//    modeBouncyBallPhysics.setStrip(strip);
+    modeSimpleAnimations.setStrip(strip);
 
     // initial setup
 
-//    modeSimpleAnimations.setAnimationMode(MODE_AUDIO_REACTIVE_WAVE);
-//    modeSimpleAnimations.setColor(strip.Color(10,100,0));
+    modeSimpleAnimations.setAnimationMode(MODE_MICROPHONE_LEVEL);
+    modeSimpleAnimations.setColor(strip.Color(10,100,0));
 
     strip.show();
 
@@ -70,8 +68,6 @@ void setup()
     // Adds newline to every command
 //    cmdMessenger.printLfCr();
 //    attachCommandCallbacks();
-
-
 }
 
 void loop()
@@ -79,10 +75,12 @@ void loop()
     pollMicrophoneLevel();
     pollPotentiometers();
     logInputs();
+    updateSimpleAnimationsParams();
 
 //    pollBluetoothStatus();
 
-//    modeSimpleAnimations.loop();
+    modeSimpleAnimations.loop();
+    
 //    modeBouncyBallPhysics.loop();
 
 // wrap looping functions in a wait using CMD_SET_UPDATE_INTERVAL
@@ -113,8 +111,7 @@ void loop()
 void attachCommandCallbacks()
 {
     cmdMessenger.attach(CMD_SET_MODE, onSetMode);
-    cmdMessenger.attach(CMD_SET_MODE_PARAM_SIMPLE_ANIMATIONS_COLOR, onSetModeParamSimpleAnimationsColor);
-    cmdMessenger.attach(CMD_SET_MODE_PARAM_SIMPLE_ANIMATIONS_CYCLES, onSetModeParamSimpleAnimationsCycles);
+//    cmdMessenger.attach(CMD_SET_MODE_PARAM_SIMPLE_ANIMATIONS_COLOR, onSetModeParamSimpleAnimationsColor);
 }
 
 void pollBluetoothStatus(void)
@@ -221,14 +218,9 @@ void onSetMode()
     }
 }
 
-void onSetModeParamSimpleAnimationsColor()
+void updateSimpleAnimationsParams()
 {
-    // update an instance variable on the to-be0converted-to-a-class SimpleAnimations class library
-
-}
-
-void onSetModeParamSimpleAnimationsCycles()
-{
-
-    
+    modeSimpleAnimations.setParam1(g_param1);
+    modeSimpleAnimations.setParam2(g_param2);
+    modeSimpleAnimations.setParam3(g_param3);
 }
