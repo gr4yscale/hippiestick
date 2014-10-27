@@ -54,13 +54,12 @@ void setup()
     LPD8806 strip = LPD8806(ledCount);
     strip.begin();
 
-//    modeBouncyBallPhysics.setStrip(strip);
+    modeBouncyBallPhysics.setStrip(strip);
     modeSimpleAnimations.setStrip(strip);
 
     // initial setup
 
     modeSimpleAnimations.setAnimationMode(MODE_MICROPHONE_LEVEL);
-    modeSimpleAnimations.setColor(strip.Color(10,100,0));
 
     strip.show();
 
@@ -74,13 +73,13 @@ void loop()
 {
     pollMicrophoneLevel();
     pollPotentiometers();
-    logInputs();
+//    logInputs();
+
     updateSimpleAnimationsParams();
 
 //    pollBluetoothStatus();
 
     modeSimpleAnimations.loop();
-    
 //    modeBouncyBallPhysics.loop();
 
 // wrap looping functions in a wait using CMD_SET_UPDATE_INTERVAL

@@ -57,7 +57,10 @@ void SimpleAnimations::loop()
             break;
         case MODE_DITHER:
             dither(color);
-            break;              // scanner
+            break;
+        case MODE_SCANNER:
+            scanner(color);         // scanner
+            break;
         case MODE_WAVE:
             wave(color, cycles);
             break;
@@ -66,7 +69,7 @@ void SimpleAnimations::loop()
             break;
         case MODE_RAINBOW_CYCLE:
             rainbowCycle();
-            break;              // uniform breathe, sequenced breathe
+            break;                  // uniform breathe, sequenced breathe
         case MODE_RANDOM_COLORS:
             randomColors();
             break;
@@ -124,7 +127,7 @@ void SimpleAnimations::dither(uint32_t c)
 
 // "Larson scanner" = Cylon/KITT bouncing light effect
 
-void SimpleAnimations::scanner(uint8_t r, uint8_t g, uint8_t b)
+void SimpleAnimations::scanner(uint32_t color)
 {
     int i, j, pos, dir;
 
@@ -137,13 +140,13 @@ void SimpleAnimations::scanner(uint8_t r, uint8_t g, uint8_t b)
         // we'll make the colors dimmer at the edges for a nice pulse
         // look
 
-        strip.setPixelColor(pos - 1, strip.Color(r, g, b));
-        strip.setPixelColor(pos - 3, strip.Color(r, g, b));
-        strip.setPixelColor(pos - 4, strip.Color(r, g, b));
-        strip.setPixelColor(pos, strip.Color(r, g, b));
-        strip.setPixelColor(pos + 1, strip.Color(r, g, b));
-        strip.setPixelColor(pos + 3, strip.Color(r, g, b));
-        strip.setPixelColor(pos + 4, strip.Color(r, g, b));
+        strip.setPixelColor(pos - 1, color);
+        strip.setPixelColor(pos - 3, color);
+        strip.setPixelColor(pos - 4, color);
+        strip.setPixelColor(pos, color);
+        strip.setPixelColor(pos + 1, color);
+        strip.setPixelColor(pos + 3, color);
+        strip.setPixelColor(pos + 4, color);
 
         digitalWrite(ADAFRUITBLE_REQ, 1);
         strip.show();
@@ -244,7 +247,7 @@ void SimpleAnimations::wave2(uint32_t c, int cycles)
 
 void SimpleAnimations::rainbowCycle()
 {
-
+    
 }
 
 

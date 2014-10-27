@@ -50,7 +50,7 @@ private:
 
     void colorWipe(uint32_t c);
     void dither(uint32_t c);
-    void scanner(uint8_t r, uint8_t g, uint8_t b);
+    void scanner(uint32_t color);
     void wave(uint32_t c, int cycles);
     void wave2(uint32_t c, int cycles);
     void rainbowCycle();

@@ -3,7 +3,7 @@
 #ifndef SharedLibrary_h
 #define SharedLibrary_h
 
-const int ledCount = 102;
+const int ledCount = 208;
 
 #define ADAFRUITBLE_REQ 10
 #define ADAFRUITBLE_RDY 3
