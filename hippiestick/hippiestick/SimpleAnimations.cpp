@@ -80,7 +80,6 @@ void SimpleAnimations::loop()
             randomColors();
             break;
     }
-
 }
 
 // fill the dots one after the other with said color
@@ -118,9 +117,7 @@ void SimpleAnimations::dither(uint32_t c)
             if(i & bit) reverse |= 1;
         }
         strip.setPixelColor(reverse, c);
-        digitalWrite(ADAFRUITBLE_REQ, 1);
         strip.show();
-        digitalWrite(ADAFRUITBLE_REQ, 0);
     }
 }
 
@@ -148,9 +145,7 @@ void SimpleAnimations::scanner(uint32_t color)
         strip.setPixelColor(pos + 3, color);
         strip.setPixelColor(pos + 4, color);
 
-        digitalWrite(ADAFRUITBLE_REQ, 1);
         strip.show();
-        digitalWrite(ADAFRUITBLE_REQ, 0);
 
         // If we wanted to be sneaky we could erase just the tail end
         // pixel, but it's much easier just to erase the whole thing
@@ -203,9 +198,7 @@ void SimpleAnimations::wave(uint32_t c, int cycles)
             }
             strip.setPixelColor(i, r2, g2, b2);
         }
-        digitalWrite(ADAFRUITBLE_REQ, 1);
         strip.show();
-        digitalWrite(ADAFRUITBLE_REQ, 0);
     }
 }
 
@@ -214,6 +207,9 @@ void SimpleAnimations::wave(uint32_t c, int cycles)
 
 void SimpleAnimations::wave2(uint32_t c, int cycles)
 {
+    cycles = map(param1, 0, 1024, 0, 40);
+    double factor = param3 * 6.0 / 1024;
+
     float y;
     byte  r, g, b, r2, g2, b2;
 
@@ -223,7 +219,7 @@ void SimpleAnimations::wave2(uint32_t c, int cycles)
     b =  c        & 0x7f;
 
     for(int i=0; i<strip.numPixels(); i++) {
-        y = sin(PI * (float)cycles * 6.0 / (float)strip.numPixels());
+        y = sin(PI * (float)cycles * factor / (float)strip.numPixels());
         if(y >= 0.0) {
             // Peaks of sine wave are white
             y  = 1.0 - y; // Translate Y to 0.0 (top) to 1.0 (center)
@@ -239,6 +235,12 @@ void SimpleAnimations::wave2(uint32_t c, int cycles)
         }
         strip.setPixelColor(i, r2, g2, b2);
     }
+    Serial.print("cycles: ");
+    Serial.print(cycles);
+    Serial.print("   ");
+    Serial.print("factor: ");
+    Serial.println(factor);
+
     strip.show();
 }
 
@@ -247,7 +249,18 @@ void SimpleAnimations::wave2(uint32_t c, int cycles)
 
 void SimpleAnimations::rainbowCycle()
 {
-    
+    uint16_t i, j;
+
+    for (j=0; j < 384 * 5; j++) {     // 5 cycles of all 384 colors in the wheel
+        for (i=0; i < strip.numPixels(); i++) {
+            // tricky math! we use each pixel as a fraction of the full 384-color
+            // wheel (thats the i / strip.numPixels() part)
+            // Then add in j which makes the colors go around per pixel
+            // the % 384 is to make the wheel cycle around
+            strip.setPixelColor(i, Wheel(((i * 384 / strip.numPixels()) + j) % 384));
+        }
+        strip.show();   // write all the pixels out
+    }
 }
 
 
@@ -266,9 +279,7 @@ void SimpleAnimations::uniformBreathe(uint8_t* breatheTable, uint8_t breatheTabl
             breatheBlu = (b * breatheTable[breatheIndex]) / 256;
             strip.setPixelColor(i, breatheRed, breatheGrn, breatheBlu);
         }
-        digitalWrite(ADAFRUITBLE_REQ, 1);
         strip.show();   // write all the pixels out
-        digitalWrite(ADAFRUITBLE_REQ, 0);
         delay(updatePeriod);
     }
 }
@@ -290,9 +301,7 @@ void SimpleAnimations::sequencedBreathe(uint8_t* breatheTable, uint8_t breatheTa
             breatheBlu = (b * breatheTable[sequenceIndex]) / 256;
             strip.setPixelColor(i, breatheRed, breatheGrn, breatheBlu);
         }
-        digitalWrite(ADAFRUITBLE_REQ, 1);
         strip.show();
-        digitalWrite(ADAFRUITBLE_REQ, 0);
         delay(updatePeriod);
     }
 }
@@ -316,9 +325,7 @@ void SimpleAnimations::randomColors()
     byte b = abs(0 - constrain(randB, 0, 127));
 
     strip.setPixelColor(i,r,g,b);
-    digitalWrite(ADAFRUITBLE_REQ, 1);
     strip.show();
-    digitalWrite(ADAFRUITBLE_REQ, 0);
 }
 
 unsigned int SimpleAnimations::microPhoneLevel() {
@@ -378,7 +385,7 @@ void SimpleAnimations::amplitudeMeter() {
     }
     strip.show();
 
-    Serial.println(factor);
+//    Serial.println(factor);
 }
 
 // private

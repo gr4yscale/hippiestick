@@ -6,6 +6,7 @@
 #include "Arduino.h"
 #include "Adafruit_BLE_UART.h"
 #include "LPD8806.h"
+#include "SPI.h"
 #include "CmdMessenger.h"
 #include "SharedLibrary.h"
 
@@ -15,7 +16,7 @@
 int g_updateInterval = 1;
 int g_brightness = 1.0;
 int g_currentMode = 0;
-int g_logHeartbeatInterval = 1000;
+int g_logHeartbeatInterval = 3000;
 
 int g_paramMicrophoneLevel = 0;
 int g_param1 = 0;
@@ -38,9 +39,11 @@ void pollMicrophoneLevel();
 void pollPotentiometers();
 void logHeartbeat();
 void logInputs();
+void logBLE();
 void onUnknownCommand();
 void onSetMode();
 void updateSimpleAnimationsParams();
+void loopStrip();
 
 
 void setup()
@@ -51,7 +54,7 @@ void setup()
 
     bleSerial.begin();
 
-    LPD8806 strip = LPD8806(ledCount);
+    LPD8806 strip = LPD8806(ledCount, 5, 4);
     strip.begin();
 
     modeBouncyBallPhysics.setStrip(strip);
@@ -60,58 +63,38 @@ void setup()
     // initial setup
 
     modeSimpleAnimations.setAnimationMode(MODE_MICROPHONE_LEVEL);
+    modeSimpleAnimations.setColor(strip.Color(255, 0, 255));
 
-    strip.show();
+//    strip.show();
 
-
-    // Adds newline to every command
-//    cmdMessenger.printLfCr();
-//    attachCommandCallbacks();
+    cmdMessenger.printLfCr();
+    attachCommandCallbacks();
 }
 
 void loop()
 {
     pollMicrophoneLevel();
     pollPotentiometers();
+
 //    logInputs();
+    updateSimpleAnimationsParams(); // dont forget to disable this on full BLE!
 
-    updateSimpleAnimationsParams();
+    pollBluetoothStatus();
+    logBLE();
 
-//    pollBluetoothStatus();
-
-    modeSimpleAnimations.loop();
-//    modeBouncyBallPhysics.loop();
 
 // wrap looping functions in a wait using CMD_SET_UPDATE_INTERVAL
 
-//    switch (g_currentMode) {
-//        case MODE_COLORFUL_MULTI_BOUNCY_BALL_PHYSICS:
-//            modeBouncyBallPhysics.loop();
-//            break;
-//        case MODE_COLOR_WIPE:
-//        case MODE_DITHER: // scanner
-//        case MODE_WAVE:
-//        case MODE_WAVE2:
-//        case MODE_RAINBOW_CYCLE:
-//        case MODE_RANDOM_COLORS:
-//            Serial.println("calling simpleAnimations loop");
-//            modeSimpleAnimations.loop();
-//            break;
-//
-//        default:
-//            modeBouncyBallPhysics.loop();
-//            break;
-//    }
-
-//    logHeartbeat();
-
+    loopStrip();
+    logHeartbeat();
 }
 
 void attachCommandCallbacks()
 {
+    cmdMessenger.attach(onUnknownCommand);
     cmdMessenger.attach(CMD_SET_MODE, onSetMode);
-//    cmdMessenger.attach(CMD_SET_MODE_PARAM_SIMPLE_ANIMATIONS_COLOR, onSetModeParamSimpleAnimationsColor);
 }
+
 
 void pollBluetoothStatus(void)
 {
@@ -190,6 +173,38 @@ void logInputs()
     Serial.println(" ");
 }
 
+
+void logBLE()
+{
+    // Lets see if there's any data for us!
+    if (bleSerial.available()) {
+      Serial.print("* "); Serial.print(bleSerial.available()); Serial.println(F(" bytes available from BTLE"));
+    }
+    // OK while we still have something to read, get a character and print it out
+    while (bleSerial.available()) {
+      char c = bleSerial.read();
+      Serial.print(c);
+    }
+
+    // Next up, see if we have any data to get from the Serial console
+
+    if (Serial.available()) {
+      // Read a line from Serial
+      Serial.setTimeout(100); // 100 millisecond timeout
+      String s = Serial.readString();
+
+      // We need to convert the line to bytes, no more than 20 at this time
+      uint8_t sendbuffer[20];
+      s.getBytes(sendbuffer, 20);
+      char sendbuffersize = min(20, s.length());
+
+      Serial.print(F("\n* Sending -> \"")); Serial.print((char *)sendbuffer); Serial.println("\"");
+
+      // write the data
+      bleSerial.write(sendbuffer, sendbuffersize);
+    }
+}
+
 // Command Callbacks
 
 
@@ -222,4 +237,13 @@ void updateSimpleAnimationsParams()
     modeSimpleAnimations.setParam1(g_param1);
     modeSimpleAnimations.setParam2(g_param2);
     modeSimpleAnimations.setParam3(g_param3);
+}
+
+void loopStrip()
+{
+    if (g_currentMode == MODE_COLORFUL_MULTI_BOUNCY_BALL_PHYSICS) {
+        modeBouncyBallPhysics.loop();
+    } else {
+        modeSimpleAnimations.loop();
+    }
 }

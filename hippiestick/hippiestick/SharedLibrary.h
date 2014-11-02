@@ -11,11 +11,12 @@ const int ledCount = 208;
 
 typedef enum
 {
-    CMD_SET_MODE                    = 1,
-    CMD_SET_UPDATE_INTERVAL         = 2,
-    CMD_SET_BRIGHTNESS              = 3,
-    CMD_SET_MODE_PARAM_SIMPLE_ANIMATIONS_COLOR = 4,
-    CMD_SET_MODE_PARAM_SIMPLE_ANIMATIONS_CYCLES = 5
+    CMD_SET_MODE                        = 1,
+    CMD_SET_UPDATE_INTERVAL             = 2,
+    CMD_SET_BRIGHTNESS                  = 3,
+    CMD_SET_SIMPLE_ANIMATIONS_PARAM1    = 4,
+    CMD_SET_SIMPLE_ANIMATIONS_PARAM2    = 5,
+    CMD_SET_SIMPLE_ANIMATIONS_PARAM3    = 6
 } cmd_t;
 
 typedef enum
