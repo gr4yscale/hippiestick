@@ -40,10 +40,15 @@ void pollPotentiometers();
 void logHeartbeat();
 void logInputs();
 void logBLE();
-void onUnknownCommand();
-void onSetMode();
 void updateSimpleAnimationsParams();
 void loopStrip();
+
+void onUnknownCommand();
+void onSetMode();
+void onSetUpdateInterval();
+void onSetSimpleAnimationsParam1();
+void onSetSimpleAnimationsParam2();
+void onSetSimpleAnimationsParam3();
 
 
 void setup()
@@ -54,7 +59,7 @@ void setup()
 
     bleSerial.begin();
 
-    LPD8806 strip = LPD8806(ledCount, 5, 4);
+    LPD8806 strip = LPD8806(ledCount, 4, 5);
     strip.begin();
 
     modeBouncyBallPhysics.setStrip(strip);
@@ -62,7 +67,8 @@ void setup()
 
     // initial setup
 
-    modeSimpleAnimations.setAnimationMode(MODE_MICROPHONE_LEVEL);
+    g_currentMode = MODE_RAINBOW_CYCLE;
+    modeSimpleAnimations.setAnimationMode(MODE_RAINBOW_CYCLE);
     modeSimpleAnimations.setColor(strip.Color(255, 0, 255));
 
 //    strip.show();
@@ -93,6 +99,7 @@ void attachCommandCallbacks()
 {
     cmdMessenger.attach(onUnknownCommand);
     cmdMessenger.attach(CMD_SET_MODE, onSetMode);
+//    CmdMessenger.attach(CMD_SET_UPDATE_INTERVAL, onSetUpdateInterval);
 }
 
 
@@ -205,33 +212,6 @@ void logBLE()
     }
 }
 
-// Command Callbacks
-
-
-void onUnknownCommand()
-{
-    Serial.println("received unknown command");
-}
-
-void onSetMode()
-{
-    Serial.println("Going to set the mode now");
-    animation_mode_t mode = (animation_mode_t)cmdMessenger.readInt16Arg();
-
-    if (g_currentMode != mode) {
-        Serial.println("changing mode: ");
-        Serial.print(mode);
-
-//      blank the strip
-//      for(uint8_t i=0; i<strip.numPixels(); i++) strip.setPixelColor(i, 0);
-//      strip.show();
-
-        modeSimpleAnimations.setAnimationMode(mode);
-
-        g_currentMode = mode;
-    }
-}
-
 void updateSimpleAnimationsParams()
 {
     modeSimpleAnimations.setParam1(g_param1);
@@ -247,3 +227,57 @@ void loopStrip()
         modeSimpleAnimations.loop();
     }
 }
+
+#pragma mark - Command Callbacks
+
+
+void onUnknownCommand()
+{
+    Serial.println("received unknown command");
+}
+
+void onSetMode()
+{
+    Serial.print("setting mode: ");
+    animation_mode_t mode = (animation_mode_t)cmdMessenger.readInt16Arg();
+
+    if (g_currentMode != mode) {
+        Serial.println(mode);
+
+//      blank the strip
+//      for(uint8_t i=0; i<strip.numPixels(); i++) strip.setPixelColor(i, 0);
+//      strip.show();
+
+        modeSimpleAnimations.setAnimationMode(mode);
+
+        g_currentMode = mode;
+    }
+}
+
+void onSetUpdateInterval()
+{
+    Serial.print("setting update interval: ");
+    g_updateInterval = (int)cmdMessenger.readInt16Arg();
+    Serial.println(g_updateInterval);
+}
+
+void onSetSimpleAnimationsParam1()
+{
+    int param1 = (int)cmdMessenger.readInt16Arg();
+    modeSimpleAnimations.setParam1(param1);
+}
+
+void onSetSimpleAnimationsParam2()
+{
+    int param2 = (int)cmdMessenger.readInt16Arg();
+    modeSimpleAnimations.setParam2(param2);
+}
+
+void onSetSimpleAnimationsParam3()
+{
+    int param3 = (int)cmdMessenger.readInt16Arg();
+    modeSimpleAnimations.setParam3(param3);
+}
+
+
+
