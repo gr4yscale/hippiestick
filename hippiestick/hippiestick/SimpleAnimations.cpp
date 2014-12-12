@@ -86,12 +86,12 @@ void SimpleAnimations::loop()
 
 void SimpleAnimations::colorWipe(uint32_t c)
 {
-    Serial.println("i should set some colorz");
+//    Serial.println("i should set some colorz");
     int i;
     for (i=0; i < strip.numPixels(); i++) {
         strip.setPixelColor(i, c);
         strip.show();
-        Serial.println("i just set some colorz");
+//        Serial.println("i just set some colorz");
     }
 }
 
@@ -235,11 +235,11 @@ void SimpleAnimations::wave2(uint32_t c, int cycles)
         }
         strip.setPixelColor(i, r2, g2, b2);
     }
-    Serial.print("cycles: ");
-    Serial.print(cycles);
-    Serial.print("   ");
-    Serial.print("factor: ");
-    Serial.println(factor);
+//    Serial.print("cycles: ");
+//    Serial.print(cycles);
+//    Serial.print("   ");
+//    Serial.print("factor: ");
+//    Serial.println(factor);
 
     strip.show();
 }
@@ -365,6 +365,7 @@ void SimpleAnimations::amplitudeMeter() {
     unsigned int micLevel = microPhoneLevel();
 
     double factor = param3 * 2.5 / 1024;
+    double volts = micLevel * 3.3 / 1024;
 
     unsigned int numberOfLights = map(micLevel, 0, 1024, 0, ledCount) * factor;
 
@@ -384,8 +385,9 @@ void SimpleAnimations::amplitudeMeter() {
         strip.setPixelColor(ledPosition, color);
     }
     strip.show();
-
-//    Serial.println(factor);
+    Serial.print(factor);
+    Serial.print("    ");
+    Serial.println(volts);
 }
 
 // private

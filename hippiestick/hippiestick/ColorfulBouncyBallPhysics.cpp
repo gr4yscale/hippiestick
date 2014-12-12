@@ -41,7 +41,7 @@ void ColorfulBouncyBallPhysics::loop() {
         renderDots();
     }
 
-    Serial.println(factor);
+//    Serial.println(factor);
 }
 
 void ColorfulBouncyBallPhysics::serialAddKineticEnergy() {

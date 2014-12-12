@@ -53,9 +53,9 @@ void onSetSimpleAnimationsParam3();
 
 void setup()
 {
-    Serial.begin(9600);
-    while(!Serial); // Leonardo/Micro should wait for serial init
-    Serial.println(F("Adafruit Bluefruit Low Energy nRF8001 Print echo demo"));
+//    Serial.begin(9600);
+//    while(!Serial); // Leonardo/Micro should wait for serial init
+//    Serial.println(F("Adafruit Bluefruit Low Energy nRF8001 Print echo demo"));
 
     bleSerial.begin();
 
@@ -67,8 +67,8 @@ void setup()
 
     // initial setup
 
-    g_currentMode = MODE_RAINBOW_CYCLE;
-    modeSimpleAnimations.setAnimationMode(MODE_RAINBOW_CYCLE);
+    g_currentMode = MODE_COLORFUL_MULTI_BOUNCY_BALL_PHYSICS;
+    modeSimpleAnimations.setAnimationMode(MODE_COLORFUL_MULTI_BOUNCY_BALL_PHYSICS);
     modeSimpleAnimations.setColor(strip.Color(255, 0, 255));
 
 //    strip.show();
@@ -80,7 +80,7 @@ void setup()
 void loop()
 {
     pollMicrophoneLevel();
-    pollPotentiometers();
+//    pollPotentiometers();
 
 //    logInputs();
     updateSimpleAnimationsParams(); // dont forget to disable this on full BLE!
@@ -99,7 +99,9 @@ void attachCommandCallbacks()
 {
     cmdMessenger.attach(onUnknownCommand);
     cmdMessenger.attach(CMD_SET_MODE, onSetMode);
-//    CmdMessenger.attach(CMD_SET_UPDATE_INTERVAL, onSetUpdateInterval);
+    cmdMessenger.attach(CMD_SET_SIMPLE_ANIMATIONS_PARAM1, onSetSimpleAnimationsParam1);
+    cmdMessenger.attach(CMD_SET_SIMPLE_ANIMATIONS_PARAM2, onSetSimpleAnimationsParam2);
+    cmdMessenger.attach(CMD_SET_SIMPLE_ANIMATIONS_PARAM3, onSetSimpleAnimationsParam3);
 }
 
 
@@ -111,13 +113,13 @@ void pollBluetoothStatus(void)
 
     if (ble_current_status != ble_laststatus) {
         if (ble_current_status == ACI_EVT_DEVICE_STARTED) {
-            Serial.println(F("* Advertising started"));
+//            Serial.println(F("* Advertising started"));
         }
         if (ble_current_status == ACI_EVT_CONNECTED) {
-            Serial.println(F("* Connected!"));
+//            Serial.println(F("* Connected!"));
         }
         if (ble_current_status == ACI_EVT_DISCONNECTED) {
-            Serial.println(F("* Disconnected or advertising timed out"));
+//            Serial.println(F("* Disconnected or advertising timed out"));
         }
         ble_laststatus = ble_current_status;
     }
@@ -148,68 +150,68 @@ void logHeartbeat()
 
     if (milliSeconds >= nextStep) {
         nextStep += g_logHeartbeatInterval;
-        Serial.println("I'm alive!");
+//        Serial.println("I'm alive!");
     }
 }
 
 void logInputs()
 {
-    Serial.print("param mic level: ");
-    Serial.print(g_paramMicrophoneLevel);
-    Serial.print(" | ");
+//    Serial.print("param mic level: ");
+//    Serial.print(g_paramMicrophoneLevel);
+//    Serial.print(" | ");
 
-    Serial.print("param 1: ");
-    Serial.print(g_param1);
-    Serial.print(" | ");
+//    Serial.print("param 1: ");
+//    Serial.print(g_param1);
+//    Serial.print(" | ");
 
-    Serial.print("param 2: ");
-    Serial.print(g_param2);
-    Serial.print(" | ");
+//    Serial.print("param 2: ");
+//    Serial.print(g_param2);
+//    Serial.print(" | ");
 
-    Serial.print("param 3: ");
-    Serial.print(g_param3);
-    Serial.print(" | ");
+//    Serial.print("param 3: ");
+//    Serial.print(g_param3);
+//    Serial.print(" | ");
 
-    Serial.print("param 4: ");
-    Serial.print(g_param4);
-    Serial.print(" | ");
+//    Serial.print("param 4: ");
+//    Serial.print(g_param4);
+//    Serial.print(" | ");
 
-    Serial.print("param 5: ");
-    Serial.print(g_param5);
+//    Serial.print("param 5: ");
+//    Serial.print(g_param5);
 
-    Serial.println(" ");
+//    Serial.println(" ");
 }
 
 
 void logBLE()
 {
     // Lets see if there's any data for us!
-    if (bleSerial.available()) {
-      Serial.print("* "); Serial.print(bleSerial.available()); Serial.println(F(" bytes available from BTLE"));
-    }
+//    if (bleSerial.available()) {
+//      Serial.print("* "); Serial.print(bleSerial.available()); Serial.println(F(" bytes available from BTLE"));
+//    }
     // OK while we still have something to read, get a character and print it out
-    while (bleSerial.available()) {
-      char c = bleSerial.read();
-      Serial.print(c);
-    }
+//    while (bleSerial.available()) {
+//      char c = bleSerial.read();
+//      Serial.print(c);
+//    }
 
     // Next up, see if we have any data to get from the Serial console
 
-    if (Serial.available()) {
+//    if (Serial.available()) {
       // Read a line from Serial
-      Serial.setTimeout(100); // 100 millisecond timeout
-      String s = Serial.readString();
+//      Serial.setTimeout(100); // 100 millisecond timeout
+//      String s = Serial.readString();
 
       // We need to convert the line to bytes, no more than 20 at this time
-      uint8_t sendbuffer[20];
-      s.getBytes(sendbuffer, 20);
-      char sendbuffersize = min(20, s.length());
+//      uint8_t sendbuffer[20];
+//      s.getBytes(sendbuffer, 20);
+//      char sendbuffersize = min(20, s.length());
 
-      Serial.print(F("\n* Sending -> \"")); Serial.print((char *)sendbuffer); Serial.println("\"");
+//      Serial.print(F("\n* Sending -> \"")); Serial.print((char *)sendbuffer); Serial.println("\"");
 
       // write the data
-      bleSerial.write(sendbuffer, sendbuffersize);
-    }
+//      bleSerial.write(sendbuffer, sendbuffersize);
+//    }
 }
 
 void updateSimpleAnimationsParams()
@@ -233,16 +235,16 @@ void loopStrip()
 
 void onUnknownCommand()
 {
-    Serial.println("received unknown command");
+//    Serial.println("received unknown command");
 }
 
 void onSetMode()
 {
-    Serial.print("setting mode: ");
+//    Serial.print("setting mode: ");
     animation_mode_t mode = (animation_mode_t)cmdMessenger.readInt16Arg();
 
     if (g_currentMode != mode) {
-        Serial.println(mode);
+//        Serial.println(mode);
 
 //      blank the strip
 //      for(uint8_t i=0; i<strip.numPixels(); i++) strip.setPixelColor(i, 0);
@@ -256,27 +258,28 @@ void onSetMode()
 
 void onSetUpdateInterval()
 {
-    Serial.print("setting update interval: ");
+//    Serial.print("setting update interval: ");
     g_updateInterval = (int)cmdMessenger.readInt16Arg();
-    Serial.println(g_updateInterval);
+//    Serial.println(g_updateInterval);
 }
 
 void onSetSimpleAnimationsParam1()
 {
     int param1 = (int)cmdMessenger.readInt16Arg();
-    modeSimpleAnimations.setParam1(param1);
+    g_param1 = param1;
 }
 
 void onSetSimpleAnimationsParam2()
 {
     int param2 = (int)cmdMessenger.readInt16Arg();
-    modeSimpleAnimations.setParam2(param2);
+    g_param2 = param2;
+    Serial.println("set param2");
 }
 
 void onSetSimpleAnimationsParam3()
 {
     int param3 = (int)cmdMessenger.readInt16Arg();
-    modeSimpleAnimations.setParam3(param3);
+    g_param3 = param3;
 }
 
 
