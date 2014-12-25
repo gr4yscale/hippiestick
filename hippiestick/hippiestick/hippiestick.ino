@@ -83,7 +83,7 @@ void loop()
 //    pollPotentiometers();
 
 //    logInputs();
-    updateSimpleAnimationsParams(); // dont forget to disable this on full BLE!
+    updateSimpleAnimationsParams();
 
     pollBluetoothStatus();
     logBLE();

@@ -1,21 +1,33 @@
 #include "ColorfulBouncyBallPhysics.h"
 
-Ball balls[] = {
-    Ball(stripCeiling, 25, .80, 1.0),
-    Ball(stripCeiling, 30, .75, 1.4),
-    Ball(stripCeiling, 15, .25, 1.6),
-    Ball(stripCeiling, 50, .15, 1.9),
-    Ball(stripCeiling, 15, .35, 1.11),
-    Ball(stripCeiling, 9, .95, 1.6),
-    Ball(stripCeiling, 25, .15, 1.22)
+Drop balls[] = {
+    Drop(stripCeiling, 295, .80, 1.0),
+    Drop(stripCeiling, 90, .75, 1.4),
+    Drop(stripCeiling, 15, .25, 1.6),
+    Drop(stripCeiling, 80, .15, 1.9),
+    Drop(stripCeiling, 150, .35, 1.11),
+    Drop(stripCeiling, 9, .95, 1.6),
+    Drop(stripCeiling, 69, .15, 1.22),
+    Drop(stripCeiling, 30, .90, 1.22),
+    Drop(stripCeiling, 200, .50, 1.22),
+    Drop(stripCeiling, 20, .30, 1.22),
+    Drop(stripCeiling, 99, .50, 1.22),
+    Drop(stripCeiling, 40, .20, 1.22),
+    Drop(stripCeiling, 690, .54, 1.22),
+    Drop(stripCeiling, 10, .51, 1.22)
+
 };
 
-const byte ballCount = sizeof(balls) / sizeof(Ball);
+const byte ballCount = sizeof(balls) / sizeof(Drop);
 
 ColorfulBouncyBallPhysics::ColorfulBouncyBallPhysics(void) {}
 
 ColorfulBouncyBallPhysics::ColorfulBouncyBallPhysics(LPD8806 s) {
     strip = s;
+
+    for (int i = 0; i < ballCount; ++i) {
+        balls[i].applyForce(random(200,2000));
+    }
 }
 
 void ColorfulBouncyBallPhysics::setStrip(LPD8806 s) {
@@ -26,13 +38,7 @@ void ColorfulBouncyBallPhysics::loop() {
     static long nextStep = 0;
     long milliSeconds = millis();
 
-    double factor = map(analogRead(1), 0, 1024.0, 0, 100);
-    gravity = factor;
-
-    addedForce = 1.0;
-
-    serialAddKineticEnergy();
-
+    gravity = 80.5;
 
     if (milliSeconds >= nextStep) {
         nextStep += updateInterval;
@@ -40,31 +46,15 @@ void ColorfulBouncyBallPhysics::loop() {
             balls[i].travel(timeFactor, gravity);
         renderDots();
     }
-
-//    Serial.println(factor);
 }
 
-void ColorfulBouncyBallPhysics::serialAddKineticEnergy() {
-    for (int i = 0; i < ballCount; ++i) {
-        balls[i].applyForce(addedForce);
-        //      Serial.print("Ball #");
-        //      Serial.print(i + 1);
-        //      Serial.print(": Force of ");
-        //      Serial.print(addedForce);
-        //      Serial.print("J changes speed from ");
-        //      Serial.print(balls[i].speed, 4);
-        //      Serial.print(" to ");
-        //      Serial.print(balls[i].speed, 4);
-        //      Serial.println("m/s");
-    }
-}
 
 void ColorfulBouncyBallPhysics::renderDots() {
     for (int i = 0; i < ballCount; ++i) {
-        int index = (balls[i].height + ledSpacing / 2) / ledSpacing;
-        strip.setPixelColor(index, colors[random(0,ballCount-1)] | strip.getPixelColor(index));
+        int index = balls[i].height;
+        strip.setPixelColor(index,0,0,255);
     }
     strip.show();
     for (int i = ballCount; i-- > 0;)
-        strip.setPixelColor((balls[i].height + ledSpacing / 2) / ledSpacing, 0);
+        strip.setPixelColor(balls[i].height, 0);
 }

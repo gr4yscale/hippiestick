@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		29B6AA9619E85EF1002AD07C /* SimpleAnimations.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29B6AA9419E85EF1002AD07C /* SimpleAnimations.cpp */; };
+		29CA862C1A42DEF800E09540 /* Drop.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29CA862A1A42DEF800E09540 /* Drop.cpp */; };
 		29D201A919E67F1300649898 /* SharedLibrary.h in Sources */ = {isa = PBXBuildFile; fileRef = 29D701A919E67F1300649898 /* SharedLibrary.h */; };
 		29D201F919E67F1300649898 /* hippiestick.ino in Sources */ = {isa = PBXBuildFile; fileRef = 29D701F919E67F1300649898 /* hippiestick.ino */; };
 		29D701A619E67F1300649898 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29D701A519E67F1300649898 /* main.cpp */; };
@@ -29,6 +30,8 @@
 /* Begin PBXFileReference section */
 		29B6AA9419E85EF1002AD07C /* SimpleAnimations.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SimpleAnimations.cpp; sourceTree = "<group>"; };
 		29B6AA9519E85EF1002AD07C /* SimpleAnimations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleAnimations.h; sourceTree = "<group>"; };
+		29CA862A1A42DEF800E09540 /* Drop.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Drop.cpp; sourceTree = "<group>"; };
+		29CA862B1A42DEF800E09540 /* Drop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Drop.h; sourceTree = "<group>"; };
 		29D701A219E67F1300649898 /* Index */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Index; sourceTree = BUILT_PRODUCTS_DIR; };
 		29D701A519E67F1300649898 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		29D701A719E67F1300649898 /* SharedLibrary.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = SharedLibrary.cpp; sourceTree = "<group>"; };
@@ -856,6 +859,8 @@
 				29D7050F19E7684C00649898 /* ColorfulBouncyBallPhysics.h */,
 				29B6AA9419E85EF1002AD07C /* SimpleAnimations.cpp */,
 				29B6AA9519E85EF1002AD07C /* SimpleAnimations.h */,
+				29CA862A1A42DEF800E09540 /* Drop.cpp */,
+				29CA862B1A42DEF800E09540 /* Drop.h */,
 			);
 			name = modes;
 			sourceTree = "<group>";
@@ -2112,6 +2117,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29CA862C1A42DEF800E09540 /* Drop.cpp in Sources */,
 				29D701A619E67F1300649898 /* main.cpp in Sources */,
 				29D701A819E67F1300649898 /* SharedLibrary.cpp in Sources */,
 				29D201A919E67F1300649898 /* SharedLibrary.h in Sources */,

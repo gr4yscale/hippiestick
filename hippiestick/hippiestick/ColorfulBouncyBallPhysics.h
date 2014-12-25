@@ -6,14 +6,15 @@
 #include "LPD8806.h"
 #include "Ball.h"
 #include "SharedLibrary.h"
+#include "Drop.h"
 
 const int
-    ledPerMeter = 52,
-    updateInterval = 1;
+    ledPerMeter = 32,
+    updateInterval = 10;
 
 const float
-    ledSpacing = 0.75 / ledPerMeter,
-    stripCeiling = (ledCount - 1) * ledSpacing,
+    ledSpacing = 1.0,
+    stripCeiling = 96.0,
     timeFactor = updateInterval / 1000.0;
 
 class ColorfulBouncyBallPhysics {
